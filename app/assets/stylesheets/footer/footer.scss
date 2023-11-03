@@ -1,0 +1,22 @@
+.footer_container{
+  padding: 0 30px;
+  background-color: #343A40;
+  max-width: 1440px;
+  height: 80px;
+  color: #E5E5E5;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.footer_links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-inline-start: 0;
+}
+
+.footer_icon {
+  height: 30px;
+}

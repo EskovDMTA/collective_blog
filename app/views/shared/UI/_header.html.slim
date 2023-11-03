@@ -1,0 +1,20 @@
+header
+  div.wrapper
+    div.header_wrapper
+      div.logo
+        = link_to "https://ru.hexlet.io/programs/rails" do
+          h1.logo_icon Photo Blog
+      div.d-flex
+        ul.d-flex.nav_links.align-items-center
+          li.link = link_to "Home"
+          li.link = link_to "About"
+          li.link = link_to "Posts"
+          li.link = link_to "Contact Us"
+        ul.d-flex.social_links.align-items-center
+          li.link = link_to "https://www.facebook.com/Hexlet/?locale=ru_RU" do
+            = image_tag src = "header/facebook.png"
+          li.link = link_to "https://twitter.com/HexletHQ" do
+            = image_tag src = "header/twitter.png"
+          li.link = link_to "https://www.youtube.com/@HexletOrg" do
+            = image_tag src = "header/youtube.png"
+

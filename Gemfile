@@ -11,6 +11,7 @@ gem 'rails', '~> 7.1.1'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim'
+gem "sassc-rails"
 gem 'slim_lint'
 gem 'sprockets-rails'
 
@@ -78,3 +79,5 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'devise', '~> 4.9'
