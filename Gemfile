@@ -8,10 +8,10 @@ ruby '3.2.2'
 gem 'rails', '~> 7.1.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'sassc-rails'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim'
-gem "sassc-rails"
 gem 'slim_lint'
 gem 'sprockets-rails'
 

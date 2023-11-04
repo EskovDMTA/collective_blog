@@ -39,7 +39,9 @@ ul {
   margin-bottom: 0rem;
   border-right: 2px solid #E5E5E5;
 }
-
+.nav_links:last-child{
+  border-right: none;
+}
 .nav_links li {
   margin-right: 25px;
 }
@@ -84,5 +86,14 @@ a {
   to {
     width: 100%;
   }
+}
+
+.button-no-style {
+  background: none;
+  font-size: 18px;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
