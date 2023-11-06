@@ -141,6 +141,7 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    mini_magick (4.12.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
     minitest-power_assert (0.3.1)
@@ -262,6 +263,9 @@ GEM
       sentry-ruby (~> 5.12.0)
     sentry-ruby (5.12.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
+    simple_form (5.3.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     slim (5.1.1)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
@@ -322,6 +326,7 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
+  mini_magick
   minitest-power_assert
   pg
   puma (>= 5.0)
@@ -331,6 +336,7 @@ DEPENDENCIES
   selenium-webdriver
   sentry-rails
   sentry-ruby
+  simple_form
   slim
   slim_lint
   sprockets-rails

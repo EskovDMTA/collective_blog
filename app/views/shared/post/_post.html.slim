@@ -1,8 +1,24 @@
-div.post_wrapper
-  div.preview_post_image
-    = image_tag src = ""
-  div.preview_post_date
-    = @post.created_at
-  div.preview_post_title
-    = @post.title
-  div.preview_post_description
+- posts.each do |post|
+  .preview_post_container
+    = link_to post_path(post)
+      .preview_post_image
+        = image_tag src= post.post_image, class: "post_image"
+        .preview_post_category_container
+          span.preview_post_category
+            = post.category.name
+      .preview_content_wrapper
+        .preview_post_date
+          = post.formatted_created_at
+        .preview_post_title
+          = post.title
+        .preview_post_description
+          span
+            = truncate(post.body, length: 100)
+        .user_block
+          .preview_user_avatar
+            = image_tag post.creator.post_avatar, class: "user_avatar"
+          .about_user
+            span.user_email
+              = post.creator.email
+            span.user_profession Engineer
+

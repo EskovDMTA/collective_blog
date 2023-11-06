@@ -1,3 +1,4 @@
-h1 Posts
-p = @user_data
-
+section.preview_posts_section
+  p.preview_posts_title Popular posts
+  .preview_posts_container
+    = render partial: "shared/post/post", locals: {posts: @posts}

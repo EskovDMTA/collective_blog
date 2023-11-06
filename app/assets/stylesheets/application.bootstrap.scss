@@ -3,11 +3,14 @@
 @import 'header/header';
 @import 'footer/footer';
 @import 'blog-slider/blog-slider';
+@import 'post/form/form';
+@import 'post/post';
+@import 'post/show/post';
 @import 'devise/devise';
 
 
 html, body {
   //display: flex;
   //flex-direction: column;
-  height: 100%;
+  background: #F8F9FA;
 }
