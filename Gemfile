@@ -53,6 +53,7 @@ gem 'minitest-power_assert'
 gem 'rubocop-rails', require: false
 gem 'devise', '~> 4.9'
 gem 'ancestry'
+gem 'jsbundling-rails'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 
 group :development, :test do

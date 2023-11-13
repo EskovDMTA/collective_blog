@@ -1,4 +1,4 @@
-.comment_block
+.comment_block.accordion-item
   .comment_container
     .like_block
       = render partial: "shared/likes/likes"
@@ -8,19 +8,23 @@
           .user_info_avatar
             = image_tag comment.user.post_avatar, class: "comment_user_avatar"
           .user_email
-            - if current_user.email == comment.user.email
+            - if current_user&.email == comment.user.email
               span you
+            - else
+              span = comment.user.email
           .comment_date_ago
             = time_ago_in_words(comment.created_at)
-        .bi-reply-fill
-          span.reply_text Reply
-
+        - if user_signed_in?
+          .bi-reply-fill data-bs-toggle="collapse" data-bs-target="#replyForm_#{comment.id}"
+            span.reply_text Reply
       .comment_content
         = comment.content
+  - if user_signed_in?
+    .accordion-collapse.collapse[id="replyForm_#{comment.id}"]
+      .comment_form
+        = render partial: "shared/form/comment", locals: { comment: create_nested_comment(comment, comment.post) }
   - if comment.children.present?
     .nested_comment_container
-      .nested_comment_delimetr
-      - comment.children.each do |children_comment|
-        = render partial: "shared/comments/comment", locals: {comment: children_comment }
-
-
+      .nested_comment_delimiter
+      - comment.children.each do |nested_comment|
+        = render partial: "shared/comments/comment", locals: { comment: nested_comment }
