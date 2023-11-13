@@ -1,0 +1,26 @@
+.comment_block
+  .comment_container
+    .like_block
+      = render partial: "shared/likes/likes"
+    .comment_block
+      .user_info
+        .user_avatar_and_date
+          .user_info_avatar
+            = image_tag comment.user.post_avatar, class: "comment_user_avatar"
+          .user_email
+            - if current_user.email == comment.user.email
+              span you
+          .comment_date_ago
+            = time_ago_in_words(comment.created_at)
+        .bi-reply-fill
+          span.reply_text Reply
+
+      .comment_content
+        = comment.content
+  - if comment.children.present?
+    .nested_comment_container
+      .nested_comment_delimetr
+      - comment.children.each do |children_comment|
+        = render partial: "shared/comments/comment", locals: {comment: children_comment }
+
+

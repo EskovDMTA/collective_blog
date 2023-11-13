@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create]
 
   def index
     @posts = Post.all
@@ -8,6 +9,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.post_comments.roots.order(created_at: :desc)
+
+    return unless user_signed_in?
+
+    @comment = @post.post_comments.new(post_id: @post.id, user_id: current_user.id)
   end
 
   def new

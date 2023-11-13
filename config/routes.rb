@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'likes/create'
   devise_for :users, controllers: { registrations: 'registrations',
                                     sessions: 'sessions' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
   # get "up" => "rails/health#show", as: :rails_health_check
   # Defines the root path route ("/")
   root 'posts#index'
-  resources :posts, only: %i[new create show index]
+  resources :posts, only: %i[new create show index] do
+    resources :comments, only: %i[create destroy]
+  end
 end

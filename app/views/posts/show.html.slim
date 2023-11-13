@@ -12,7 +12,7 @@ section.show_post
         = @post.body
       .post_image
         = image_tag @post.post_image, class: "show_post_image"
-      .post_title
+      .post_title_main
         = @post.title
       .post_category
         span = @post.category.name
@@ -28,3 +28,11 @@ section.show_post
           .bi-telegram
           .bi-instagram
           .bi-github
+      p Comments
+      - if @comments.present?
+        = render partial: "shared/comments/comment", collection: @comments, as: :comment
+      - else
+        p Post has no comments yet
+      - if user_signed_in?
+        = render partial: "shared/form/comment", locals: {comment: @comment }
+
