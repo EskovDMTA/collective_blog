@@ -7,7 +7,6 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @post.lik
   end
 
   private

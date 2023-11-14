@@ -17,7 +17,7 @@
 }
 
 .form_comment_input {
-  width: 90%;
+  width: 95%;
   height: 96px;
   border-radius: 8px;
   border: 1px solid #E9EBF0;
@@ -27,7 +27,6 @@
 }
 
 .form_comment_btn {
-  flex: 2;
   height: 48px;
   border-radius: 8px;
   background: rgba(6, 40, 161, 0.73);
@@ -38,10 +37,7 @@
   transition: background 0.5s linear;
 }
 
-.comment_btn:hover {
-  color: #ffffff;
-  background: rgba(6, 40, 161, 0.55);
-}
+
 
 
 .comment_container {
@@ -92,8 +88,23 @@
   margin-left: 5px;
 }
 
-.user_email span {
-  color: #5357B6;
+.user_email div {
+  color: #FFF;
+  width: 120%;
+  height: 120%;
+  border-radius: 2px;
+  text-align: center;
+  background: var(--Moderate-Blue, #5357B6);
+}
+button{
+  border: none;
+  background-color: white;
+}
+.bi-trash3-fill{
+  transition: all 0.5ms ease-in;
+}
+.bi-trash3-fill:hover{
+  transform: scale(1.05);
 }
 .nested_comment_container{
   display: flex;

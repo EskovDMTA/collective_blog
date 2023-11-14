@@ -5,8 +5,6 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.post_comments.build(comment_params)
     @comment.user = current_user
-    # parent_comment = PostComment.find(params[:parent_id]) if params[:parent_id].present?
-    # @comment = parent_comment.children.build(comment_params)
     if @comment.save
       redirect_to post_path(params[:post_id]), notice: 'Комментарий успешно добавлен!'
     else
@@ -14,7 +12,14 @@ class CommentsController < ApplicationController
     end
   end
 
-  def show
+  def destroy
+    @comment = PostComment.find(params[:id])
+    @post = @comment.post
+    if @comment.destroy
+      redirect_to post_path(@post), notice: 'Comment delete'
+    else
+      redirect_to post_path(@post), alert: 'Failed to delete comment 😞'
+    end
   end
 
   private
