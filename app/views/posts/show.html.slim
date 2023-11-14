@@ -6,7 +6,7 @@ section.show_post
           = @post.formatted_created_at
         .delimiter
         .post_reading_time
-          = @post.reading_time + " minutes"
+          = @post.reading_time + " minute"
     .right_post_side
       .post_body
         = @post.body
@@ -24,6 +24,8 @@ section.show_post
             span.user_email
               = @post.creator.email
             span.user_profession Engineer
+        .likes_container
+          = render partial: "shared/likes/post_likes", locals: {post: @post}
         .creator_social_media
           .bi-telegram
           .bi-instagram

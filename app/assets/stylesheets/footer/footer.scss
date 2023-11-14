@@ -1,3 +1,10 @@
+footer {
+  background: rgba(49, 48, 48, 0.42);
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
 .footer_container{
   padding: 0 30px;
   background: rgb(33, 37, 41);
@@ -19,4 +26,21 @@
 
 .footer_icon {
   height: 30px;
+}
+
+.footer_wrapper {
+  padding: 0 30px;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #E5E5E5;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.text_data {
+  font-size: 20px;
 }
