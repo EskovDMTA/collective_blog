@@ -1,0 +1,46 @@
+.container.text-dark.mt-7
+  .row
+    .col-md-8.offset-md-2
+      h2.text-center My Photo Blog
+      p.text-center
+        | Welcome to "Photo Blog" - my educational project created to demonstrate web development skills.
+      p.text-center
+        | Here you can register, publish your photos, comment on posts, like, and interact with other participants.
+
+  .row.my-5
+    .col-md-6
+      h3 About the Project
+      p
+        | "Photo Blog" is developed using Ruby on Rails and includes basic social network features such as registration, post publishing, commenting, and liking.
+      p
+        | The project is created for educational purposes and is intended for learning web development basics.
+        | This project is implemented on the educational platform
+        = link_to ' Hexlet', 'https://ru.hexlet.io/', target: '_blank', class: 'text-blue'
+        | .
+      p
+        | It's also worth noting that tests are written in the project using
+        = link_to  ' Minitest', 'https://guides.rubyonrails.org/testing.html', target: '_blank', class: 'text-blue'
+        | .
+      p
+        | The
+        = link_to ' Ancestry ', 'https://github.com/stefankroes/ancestry', target: '_blank', class: 'text-blue'
+        | gem is used for managing comments.
+
+    .col-md-6
+      h3 Contact Me
+      ul.list-unstyled
+        li
+          i.bi.bi-github
+          |
+          = link_to ' GitHub', 'https://github.com/EskovDMTA', target: '_blank', class: 'text-dark'
+        li
+          i.bi.bi-telegram
+          |
+          = link_to ' Telegram', 'https://t.me/EDMTA', target: '_blank', class: 'text-dark'
+      p.text-muted.text-center
+        small
+          | If you have any questions or suggestions, feel free to contact me via
+          = link_to ' GitHub', 'https://github.com/EskovDMTA', target: '_blank', class: 'text-blue'
+          |  or
+          = link_to ' Telegram', 'https://t.me/EDMTA', target: '_blank', class: 'text-blue'
+          | .

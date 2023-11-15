@@ -1,11 +1,16 @@
-- if like_active?(post, current_user)
-  = link_to post_like_path(post, post.post_likes.find_by(user_id: current_user.id)), data: { turbo_method: :delete, "ignore-click" => true }, class: "likes" do
-    = image_tag "likes/like_active.png", class: "likes_icon"
-    span.likes_count
-      = post.likes_count
+-if user_signed_in?
+  - if like_active?(post, current_user)
+    = link_to post_like_path(post, post.post_likes.find_by(user_id: current_user.id)), data: { turbo_method: :delete, "ignore-click" => true }, class: "likes" do
+      = image_tag "likes/like_active.png", class: "likes_icon"
+      span.likes_count
+        = post.likes_count
+  - else
+    = link_to post_likes_path(post.id), data: { turbo_method: :post}, class: "likes" do
+      = image_tag "likes/heart.png", class: "likes_icon"
+      span.likes_count
+        = post.likes_count
 - else
-  = link_to post_likes_path(post.id), data: { turbo_method: :post}, class: "likes" do
+  = link_to new_user_session_path, class: "likes" do
     = image_tag "likes/heart.png", class: "likes_icon"
     span.likes_count
       = post.likes_count
-

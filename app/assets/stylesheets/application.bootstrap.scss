@@ -8,12 +8,25 @@
 @import 'post/show/post';
 @import 'comments/comments';
 @import 'likes/likes';
+@import 'big_post/big_post';
+@import 'about/about';
 @import 'devise/devise';
 
-
-
 html, body {
-  //display: flex;
-  //flex-direction: column;
+  height: 100%;
+  margin: 0;
   background: #F8F9FA;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  flex-shrink: 0;
 }

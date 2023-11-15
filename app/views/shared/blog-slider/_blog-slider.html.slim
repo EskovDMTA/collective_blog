@@ -1,1 +1,15 @@
-section.blog_slider
+#posts_slider.carousel.carousel-dark.slide[data-bs-ride="carousel"]
+  .carousel-indicators
+    button.active[type="button" data-bs-target="#posts_slider" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"]
+    button[type="button" data-bs-target="#posts_slider" data-bs-slide-to="1" aria-label="Slide 2"]
+    button[type="button" data-bs-target="#posts_slider" data-bs-slide-to="2" aria-label="Slide 3"]
+  .carousel-inner
+    = @popular_posts.each_with_index do |post, index|
+      .carousel-item class="#{index.zero? ? 'active' : ''}" data-bs-interval="5000"
+        = image_tag post.image, class: "d-block w-100"
+        .carousel-caption.d-none.d-md-block
+          h5
+            = link_to post.title, post_path(post)
+          p
+            = truncate(post.body, length: 120)
+

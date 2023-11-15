@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[create]
+  before_action :authenticate_user!
 
+  layout "base_page", only: %i[show]
   def index
     @posts = Post.all
+    @popular_posts = Post.limit(3)
+    @big_post = Post.order("RANDOM()").first
   end
 
   def show
@@ -17,9 +20,13 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = current_user.posts.build
-    @categories = Category.all
-    @user = current_user
+    if authenticate_user!
+      @post = current_user.posts.build
+      @categories = Category.all
+      @user = current_user
+    else
+      redirect_to sign_in
+    end
   end
 
   def create

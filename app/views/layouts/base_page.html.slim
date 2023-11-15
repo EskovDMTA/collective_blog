@@ -11,10 +11,6 @@ html
   body
     = render partial: "shared/UI/header"
     main
-      section.blog_slider
-        = render partial: "shared/blog-slider/blog-slider"
-      section.popular_posts
+      section
         = yield
-      section.big_post
-        = render partial: "shared/post/big_post"
     = render partial: "shared/UI/footer"
