@@ -5,11 +5,10 @@ import "bootstrap";
 import CustomToast from "./components/toast";
 
 document.addEventListener('DOMContentLoaded', function () {
-    const notice = document.querySelector('[name="notice"]').value;
-    console.log(notice)
-    console.log("NOTICE")
+    const notice = document.querySelector(".notice");
+    console.log("Проверка загрузки скрипта");
     if (notice) {
-        console.log("NOTICE")
-        CustomToast.showToast(notice, 3000, "Info");
+        console.log("поймали, отображаем");
+        CustomToast.showToast(notice.textContent, 3000, "Info");
     }
 });

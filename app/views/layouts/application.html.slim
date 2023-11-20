@@ -11,6 +11,7 @@ html
   body.application_wrapper
     = render partial: "shared/UI/header"
     main
-      = hidden_field_tag :notice, notice
+      - if notice
+          p = notice
       = yield
     = render partial: "shared/UI/footer"
