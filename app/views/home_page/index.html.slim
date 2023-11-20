@@ -1,0 +1,9 @@
+section.blog_slider
+  = render partial: "shared/blog-slider/blog-slider"
+section.popular_posts
+  section.preview_posts_section
+    p.preview_posts_title Popular posts
+    .preview_posts_container
+      = render partial: "shared/post/post", locals: { posts: @popular_posts }
+section.big_post
+  = render partial: "shared/post/big_post"

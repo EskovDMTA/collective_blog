@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create]
 
   layout "base_page", only: %i[show]
   def index
     @posts = Post.all
-    @popular_posts = Post.limit(3)
-    @big_post = Post.order("RANDOM()").first
   end
 
   def show

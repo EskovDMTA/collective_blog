@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyString
-  creator: one
+  title: Winter
+  body: Winter winter
+  creator: :two
   category: one
 
 two:
-  title: MyString
-  body: MyString
+  title: Summer
+  body: Summer summer
   creator: two
   category: two

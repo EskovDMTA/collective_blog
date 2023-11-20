@@ -11,6 +11,8 @@ html
   body
     = render partial: "shared/UI/header"
     main
+      - if notice.present?
+        = render partial: "shared/toast/toast", locals: { notice: notice }
       section
         = yield
     = render partial: "shared/UI/footer"

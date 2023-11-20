@@ -23,7 +23,8 @@ section.show_post.mt-7
           .about_user
             span.user_email
               = @post.creator.email
-            span.user_profession Engineer
+            span.user_profession
+              = @post.creator.profession
         .likes_container
           = render partial: "shared/likes/post_likes", locals: {post: @post}
         .creator_social_media

@@ -2,7 +2,7 @@
   .preview_post_container
     = link_to post_path(post)
       .preview_post_image
-        = image_tag src= post.post_image, class: "post_image"
+        = image_tag src = post.post_image, class: "post_image"
         .preview_post_category_container
           span.preview_post_category
             = post.category.name
@@ -20,5 +20,6 @@
           .about_user
             span.user_email
               = post.creator.email
-            span.user_profession Engineer
+            span.user_profession
+              = post.creator.profession
 

@@ -1,0 +1,20 @@
+section.sign_up
+ div.left_side
+  h2.registration_title Forgot password ?
+  p.welcome_description Post your photos and interact with other authors on PhotoBlog.
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+   = render "devise/shared/error_messages", resource: resource
+   .form-inputs
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "email_input"
+   .actions
+    = f.button :submit, "Send me reset password instructions", class: "login_btn"
+
+  div.sign_up_description
+   | Already have an account ?
+   = link_to "Log in", new_session_path(resource_name), class: "sign_up_button"
+   div
+   | Don't have an account? ?
+   = link_to "Sign up", new_user_registration_path, class: "sign_up_button"
+
+ div.right_side
+  = image_tag("registration/registration_image.JPG", class: "login_image")

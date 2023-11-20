@@ -3,26 +3,24 @@ header {
   position: fixed;
   background: rgba(0, 0, 0, 0.20);
   top: 0px;
-  left: 0px;
+  width: 100%;
+  max-width: 1440px;
   height: 80px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: left;
 }
 
 .wrapper {
-  margin: 0 auto;
+  width: 100%;
 }
 
 .header_wrapper {
   padding: 0 30px;
-  height: 100%;
-  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #E5E5E5;
-  font-size: 12px;
   font-weight: 700;
   line-height: normal;
 }

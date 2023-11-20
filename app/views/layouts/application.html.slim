@@ -8,13 +8,9 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
-  body
+  body.application_wrapper
     = render partial: "shared/UI/header"
     main
-      section.blog_slider
-        = render partial: "shared/blog-slider/blog-slider"
-      section.popular_posts
-        = yield
-      section.big_post
-        = render partial: "shared/post/big_post"
+      = hidden_field_tag :notice, notice
+      = yield
     = render partial: "shared/UI/footer"

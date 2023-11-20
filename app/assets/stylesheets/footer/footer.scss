@@ -3,6 +3,9 @@ footer {
   height: 100px;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  bottom: 0;
 }
 
 .footer_container{
@@ -30,8 +33,6 @@ footer {
 
 .footer_wrapper {
   padding: 0 30px;
-  height: 100%;
-  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
