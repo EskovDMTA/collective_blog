@@ -1,0 +1,20 @@
+.profile_content
+  h2
+    | Your Profile
+  p
+    strong
+      | Email:
+    = @user.email
+  h3
+    | Your Posts
+  p
+    | Total Posts:
+    = @posts_count
+  p
+    | Total Likes Received:
+    = @likes_count
+  h3.mb-5
+    | Your Latest Posts
+  .preview_posts_container
+      = render partial: "shared/post/post", locals: {posts: @posts}
+

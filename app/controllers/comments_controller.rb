@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create]
 
@@ -7,9 +8,9 @@ class CommentsController < ApplicationController
     @comment = @post.post_comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to post_path(params[:post_id]), notice: 'Комментарий успешно добавлен!'
+      redirect_to post_path(params[:post_id]), notice: 'Comment added successfully!😊'
     else
-      redirect_to post_path(params[:post_id]), alert: 'Не удалось добавить комментарий!'
+      redirect_to post_path(params[:post_id]), alert: 'Failed to add comment!😞'
     end
   end
 
@@ -17,7 +18,7 @@ class CommentsController < ApplicationController
     @comment = PostComment.find(params[:id])
     @post = @comment.post
     if @comment.destroy
-      redirect_to post_path(@post), notice: 'Comment delete'
+      redirect_to post_path(@post), notice: 'Comment delete!😊'
     else
       redirect_to post_path(@post), alert: 'Failed to delete comment 😞'
     end

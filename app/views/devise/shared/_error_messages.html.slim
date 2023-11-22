@@ -1,0 +1,6 @@
+- if resource.errors.any?
+  #error_explanation[data-turbo-cache="false"]
+    ul.form_errors_list
+      - resource.errors.full_messages.each do |message|
+        li.form_error_message
+          = message

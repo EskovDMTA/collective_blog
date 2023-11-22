@@ -26,7 +26,7 @@ section.show_post.mt-7
             span.user_profession
               = @post.creator.profession
         .likes_container
-          = render partial: "shared/likes/post_likes", locals: {post: @post}
+          = render partial: "shared/likes/post_likes", locals: { post: @post }
         .creator_social_media
           .bi-telegram
           .bi-instagram
@@ -37,5 +37,5 @@ section.show_post.mt-7
       - else
         p Post has no comments yet
       - if user_signed_in?
-        = render partial: "shared/form/comment", locals: {comment: @comment, button_name: "Create" }
+        = render partial: "shared/form/comment", locals: { comment: @comment, button_name: "Create" }
 

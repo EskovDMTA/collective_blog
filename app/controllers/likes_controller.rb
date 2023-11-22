@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :authenticate_user!
   before_action :get_post, only: %i[create destroy]
@@ -5,13 +7,13 @@ class LikesController < ApplicationController
   def create
     @like = @post.post_likes.new(user: current_user)
     @like.save
-    redirect_to @post
+    redirect_to @post, notice: '👍'
   end
 
   def destroy
     @like = PostLike.find(params[:id])
     @like.destroy
-    redirect_to @post
+    redirect_to @post, notice: '👎'
   end
 
   private

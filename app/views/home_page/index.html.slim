@@ -6,4 +6,5 @@ section.popular_posts
     .preview_posts_container
       = render partial: "shared/post/post", locals: { posts: @popular_posts }
 section.big_post
-  = render partial: "shared/post/big_post"
+  - if @big_post.present?
+    = render partial: "shared/post/big_post"

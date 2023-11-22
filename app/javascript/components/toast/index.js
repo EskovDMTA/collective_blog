@@ -1,35 +1,35 @@
-import "./index.css"
+// flash-toast.js
 
-export default class CustomToast {
-    static showToast(message, duration, type) {
-        const toastContainer = document.createElement("div")
-        toastContainer.classList.add("toast-container")
-        toastContainer.style.backgroundColor = this.getColor(type)
-        document.body.appendChild(toastContainer)
+export default function initializeFlashToast() {
+    document.addEventListener('turbo:load', () => {
+        const toast = document.querySelector(".flash-toast");
+        const closeIcon = document.querySelector(".flash-close");
+        const progress = document.querySelector(".flash-progress");
 
-        const toast = document.createElement("div")
-        toast.classList.add("toast")
-        toast.textContent = message
+        let timer1, timer2;
 
-        toastContainer.appendChild(toast)
-        toastContainer.style.display = "block"
+        if (toast && closeIcon && progress && toast.innerText.length > 0) {
+            toast.classList.add("active");
+            progress.classList.add("active");
 
-        setTimeout(() => {
-            toastContainer.removeChild(toast)
-            if (toastContainer.childElementCount === 0) {
-                toastContainer.style.display = "none"
-            }
-        }, duration)
-    }
+            timer1 = setTimeout(() => {
+                toast.classList.remove("active");
+            }, 5000);
 
-    static getColor(type) {
-        switch (type) {
-            case "Error":
-                return "var(--bs-warning)"
-            case "Info":
-                return "var(--bs-info)"
-            default:
-                return "var(--bs-success)"
+            timer2 = setTimeout(() => {
+                progress.classList.remove("active");
+            }, 5300);
+
+            closeIcon.addEventListener("click", () => {
+                toast.classList.remove("active");
+
+                setTimeout(() => {
+                    progress.classList.remove("active");
+                }, 300);
+
+                clearTimeout(timer1);
+                clearTimeout(timer2);
+            });
         }
-    }
+    });
 }

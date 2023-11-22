@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class LikesControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -7,7 +9,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     sign_in(@user)
   end
 
-  test "should create like" do
+  test 'should create like' do
     assert_difference('PostLike.count', 1) do
       post post_likes_path(@post.id)
     end
@@ -15,7 +17,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_path(@post)
   end
 
-  test "should destroy like" do
+  test 'should destroy like' do
     like = @post.post_likes.create(user: @user)
 
     assert_difference('PostLike.count', -1) do

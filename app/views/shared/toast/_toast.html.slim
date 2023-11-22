@@ -1,9 +1,10 @@
-- if notice
-  .position-fixed.bottom-0.end-0.p-3
-    .toast[role="alert" aria-live="assertive" aria-atomic="true"]
-      .toast-header
-        strong.me-auto
-          | Уведомление
-        button.btn-close[type="button" data-bs-dismiss="toast" aria-label="Close"]
-      .toast-body
+.flash-toast.active
+  .toast-content
+    i.bi.bi-check-lg.check
+    .message
+      span.text.text-1
+        | Success
+      span.text.text-2
         = notice
+  i.bi.bi-x-lg.flash-close
+  .flash-progress.active

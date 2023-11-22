@@ -5,14 +5,15 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.1.1'
 gem 'mini_magick'
+gem 'rails', '~> 7.1.1'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'image_processing', '~> 1.2'
 gem 'sassc-rails'
 gem 'sentry-rails'
 gem 'sentry-ruby'
-gem 'slim'
 gem 'simple_form'
+gem 'slim'
 gem 'slim_lint'
 gem 'sprockets-rails'
 
@@ -47,13 +48,13 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'ancestry'
 gem 'bootsnap', require: false
+gem 'devise', '~> 4.9'
 gem 'faker'
+gem 'jsbundling-rails'
 gem 'minitest-power_assert'
 gem 'rubocop-rails', require: false
-gem 'devise', '~> 4.9'
-gem 'ancestry'
-gem 'jsbundling-rails'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 
 group :development, :test do
@@ -81,5 +82,3 @@ end
 group :production do
   gem 'pg'
 end
-
-

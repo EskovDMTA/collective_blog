@@ -100,3 +100,14 @@
   object-fit: cover;
 }
 
+.form_error_message{
+  color: #D50000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.048px;
+}
+.form_errors_list{
+  list-style-type: disc;
+}

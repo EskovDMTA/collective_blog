@@ -103,12 +103,14 @@
   display: flex;
   justify-content: left;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 
 .user_avatar {
   width: 50px;
   height: 50px;
+  border-radius: 25px;
 }
 
 
@@ -134,4 +136,19 @@
 .posts_section {
   padding: 0 30px;
   margin-bottom: 100px;
+}
+.post_actions{
+display: flex;
+}
+.edit_post_link {
+  color: #D4A373;
+  margin-right: 30px;
+  transition: all 0.5s ease-in;
+}
+
+.delete_post_link {
+  display: inline;
+  font-size: 16px;
+  color: rgba(243, 23, 23, 0.64);
+  transition: all 0.5s ease-in;
 }

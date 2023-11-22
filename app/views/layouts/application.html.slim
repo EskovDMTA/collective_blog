@@ -12,6 +12,6 @@ html
     = render partial: "shared/UI/header"
     main
       - if notice
-          p = notice
+        = render partial: "shared/toast/toast", locals: {notice: notice}
       = yield
     = render partial: "shared/UI/footer"

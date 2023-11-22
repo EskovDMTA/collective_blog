@@ -3,7 +3,7 @@
 one:
   title: Winter
   body: Winter winter
-  creator: :two
+  creator: :one
   category: one
 
 two:
