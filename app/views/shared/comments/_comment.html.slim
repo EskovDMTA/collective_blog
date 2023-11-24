@@ -4,7 +4,7 @@
       .user_info
         .user_avatar_and_date
           .user_info_avatar
-            = image_tag comment.user.post_avatar, class: "comment_user_avatar"
+            = image_tag comment.user.post_avatar, class: 'comment_user_avatar'
           .user_email
             - if current_user&.email == comment.user.email
               div you
@@ -14,7 +14,8 @@
             = time_ago_in_words(comment.created_at)
         div.d-inline-flex
           - if comment.user == current_user
-            = button_to "", post_comment_path(comment.post, comment), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bi-trash3-fill me-3"
+            = button_to '', post_comment_path(comment.post, comment), method: :delete,
+            data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'bi-trash3-fill me-3'
           - if user_signed_in?
             .bi-reply-fill data-bs-toggle="collapse" data-bs-target="#replyForm_#{comment.id}"
               span.reply_text Reply
@@ -23,9 +24,10 @@
   - if user_signed_in?
     .accordion-collapse.collapse[id="replyForm_#{comment.id}"]
       .comment_form
-        = render partial: "shared/form/comment", locals: { comment: create_nested_comment(comment, comment.post), button_name: "Reply" }
+        = render partial: 'shared/form/comment',
+        locals: { comment: create_nested_comment(comment, comment.post), button_name: 'Reply' }
   - if comment.children.present?
     .nested_comment_container
       .nested_comment_delimiter
       - comment.children.each do |nested_comment|
-        = render partial: "shared/comments/comment", locals: { comment: nested_comment }
+        = render partial: 'shared/comments/comment', locals: { comment: nested_comment }

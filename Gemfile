@@ -55,6 +55,7 @@ gem 'faker'
 gem 'jsbundling-rails'
 gem 'minitest-power_assert'
 gem 'rubocop-rails', require: false
+gem 'rubocop-slim', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 
 group :development, :test do

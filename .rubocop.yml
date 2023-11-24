@@ -1,25 +1,31 @@
+require:
+  - rubocop-slim
+  - rubocop-rails
+
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 3.2.2
+  Exclude:
+    - 'db'
+    - 'lib/tasks/auto_annotate_models.rake'
+    - 'bin/**/*'
 
 Style/StringLiterals:
-  Enabled: true
+#  Enabled: true
   EnforcedStyle: single_quotes
 
 Style/StringLiteralsInInterpolation:
-  Enabled: true
+#  Enabled: true
   EnforcedStyle: double_quotes
 
 Style/Documentation:
   Enabled: false
 
-Layout/LineLength:
-  Max: 160
-
 Metrics/MethodLength:
-  Max: 35
+  Enabled: false
 
 Metrics/BlockLength:
-  Max: 90
+  Enabled: false
 
 Metrics/CyclomaticComplexity:
   Max: 9
@@ -27,5 +33,24 @@ Metrics/CyclomaticComplexity:
 Metrics/PerceivedComplexity:
   Max: 9
 
+Rails/ReversibleMigration:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'config/initializers/devise.rb'
+    - 'config/initializers/simple_form.rb'
+
 Metrics/AbcSize:
-  Max: 30
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+

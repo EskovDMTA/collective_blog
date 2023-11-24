@@ -6,12 +6,12 @@ section.show_post.mt-7
           = @post.formatted_created_at
         .delimiter
         .post_reading_time
-          = @post.reading_time + " minute"
+          = "#{@post.reading_time} minute"
     .right_post_side
       .post_body
         = @post.body
       .post_image
-        = image_tag @post.post_image, class: "show_post_image"
+        = image_tag @post.post_image, class: 'show_post_image'
       .post_title_main
         = @post.title
       .post_category
@@ -19,23 +19,23 @@ section.show_post.mt-7
       .about_user_container
         .user_block
           .preview_user_avatar
-            = image_tag @post.creator.post_avatar, class: "user_avatar"
+            = image_tag @post.creator.post_avatar, class: 'user_avatar'
           .about_user
             span.user_email
               = @post.creator.email
             span.user_profession
               = @post.creator.profession
         .likes_container
-          = render partial: "shared/likes/post_likes", locals: { post: @post }
+          = render partial: 'shared/likes/post_likes', locals: { post: @post }
         .creator_social_media
           .bi-telegram
           .bi-instagram
           .bi-github
       p Comments
       - if @comments.present?
-        = render partial: "shared/comments/comment", collection: @comments, as: :comment
+        = render partial: 'shared/comments/comment', collection: @comments, as: :comment
       - else
         p Post has no comments yet
       - if user_signed_in?
-        = render partial: "shared/form/comment", locals: { comment: @comment, button_name: "Create" }
+        = render partial: 'shared/form/comment', locals: { comment: @comment, button_name: 'Create' }
 

@@ -24,11 +24,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
   margin: 0;
 }
 
 main {
   flex: 1;
+  max-width: 1440px;
 }
 
 footer {
@@ -38,4 +40,5 @@ footer {
 .application_wrapper {
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
 }

@@ -3,17 +3,18 @@ section.create_post_section.mt-7
     h2.create_post_title = title
     = simple_form_for(model, html: { class: 'post_form' }) do |f|
       .field
-        = f.input :title, placeholder: "Title", label: false, input_html: { class: 'title_input' }
+        = f.input :title, placeholder: 'Title', label: false, input_html: { class: 'title_input' }
       .field
-        = f.text_area :body, placeholder: "Text", label: false, class: 'post_text_input'
+        = f.text_area :body, placeholder: 'Text', label: false, class: 'post_text_input'
       .field.mb-4
-        = f.input :category_id, collection: @categories, label_method: :name, value_method: :id, label: false, input_html: { class: 'form-select' }
+        = f.input :category_id, collection: @categories, label_method: :name, value_method: :id, label: false,
+        input_html: { class: 'form-select' }
       .field.mb-4
-        = f.file_field :image, placeholder: "Add image", label: false, class: 'form-control'
+        = f.file_field :image, placeholder: 'Add image', label: false, class: 'form-control'
       .actions
         = f.submit button_text, class: 'login_btn'
   div.right_side
-    = image_tag src = "registration/registration_image.JPG", class: "login_image"
+    = image_tag src = 'registration/registration_image.JPG', class: 'login_image'
 
 
 

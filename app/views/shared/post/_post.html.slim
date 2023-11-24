@@ -2,7 +2,7 @@
   .preview_post_container
     = link_to post_path(post)
       .preview_post_image
-        = image_tag src = post.post_image, class: "post_image"
+        = image_tag src = post.post_image, class: 'post_image'
         .preview_post_category_container
           span.preview_post_category
             = post.category.name
@@ -16,7 +16,7 @@
             = truncate(post.body, length: 80)
         .user_block
           .preview_user_avatar
-            = image_tag post.creator.post_avatar, class: "user_avatar"
+            = image_tag post.creator.post_avatar, class: 'user_avatar'
           .about_user
             span.user_email
               = post.creator.email
@@ -26,5 +26,6 @@
           - if controller_name == 'profiles'
             .post_actions
               = link_to 'Edit post', edit_post_path(post), class: 'edit_post_link'
-              = button_to 'Delete post', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-no-style delete_post_link'
+              = button_to 'Delete post', post_path(post), method: :delete, data: { confirm: 'Are you sure?' },
+              class: 'button-no-style delete_post_link'
 

@@ -9,7 +9,7 @@
       = f.hidden_field :parent_id, value: comment.parent_id
 
     .field.mb-4.form_input_container
-      = f.input :content, label: false, placeholder: "Write comment", input_html: { class: "form_comment_input" }
+      = f.input :content, label: false, placeholder: 'Write comment', input_html: { class: 'form_comment_input' }
 
     .actions
       = f.button :submit, class: 'form_comment_btn', value: button_name

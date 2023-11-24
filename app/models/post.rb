@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :post_comments, class_name: 'PostComment', dependent: :destroy
   has_many :post_likes, dependent: :destroy
 
-  belongs_to :creator, class_name: 'User', foreign_key: 'creator_id'
+  belongs_to :creator, class_name: 'User'
   belongs_to :category
 
   def formatted_created_at
@@ -23,7 +23,7 @@ class Post < ApplicationRecord
   def reading_time
     words_per_minute = 200
 
-    minutes_reading = (body.split(' ').length / words_per_minute) + 1
+    minutes_reading = (body.split.length / words_per_minute) + 1
     minutes_reading.to_s
   end
 end

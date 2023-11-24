@@ -4,7 +4,6 @@ import "./controllers"
 import "bootstrap";
 import initializeFlashToast from "./components/toast";
 
-
 initializeFlashToast();
 
 

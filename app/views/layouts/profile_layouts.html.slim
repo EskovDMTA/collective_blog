@@ -6,13 +6,13 @@ html
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
   body.application_wrapper
-    = render partial: "shared/profile/header"
+    = render partial: 'shared/profile/header'
     main
       section.user_profile
       - if notice.present?
-        = render partial: "shared/toast/toast", locals: { notice: notice }
+        = render partial: 'shared/toast/toast', locals: { notice: }
       = yield
 

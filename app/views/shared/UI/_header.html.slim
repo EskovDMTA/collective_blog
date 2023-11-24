@@ -6,18 +6,18 @@ header
           h1.logo_icon Photo Blog
       div.d-flex
         ul.d-flex.nav_links.align-items-center
-          li.link = link_to "Home", root_path
-          li.link = link_to "About", about_path
-          li.link = link_to "Posts", posts_path
+          li.link = link_to 'Home', root_path
+          li.link = link_to 'About', about_path
+          li.link = link_to 'Posts', posts_path
         ul.d-flex.social_links.align-items-center
-          li.link = link_to "https://www.facebook.com/Hexlet/?locale=ru_RU" do
-            = image_tag src = "header/facebook.png"
-          li.link = link_to "https://twitter.com/HexletHQ" do
-            = image_tag src = "header/twitter.png"
-          li.link = link_to "https://www.youtube.com/@HexletOrg" do
-            = image_tag src = "header/youtube.png"
+          li.link = link_to 'https://www.facebook.com/Hexlet/?locale=ru_RU' do
+            = image_tag src = 'header/facebook.png'
+          li.link = link_to 'https://twitter.com/HexletHQ' do
+            = image_tag src = 'header/twitter.png'
+          li.link = link_to 'https://www.youtube.com/@HexletOrg' do
+            = image_tag src = 'header/youtube.png'
         ul.d-flex.nav_links.align-items-center
           - if user_signed_in?
-            li.link = link_to "Profile", profile_path, class: "button-no-style"
+            li.link = link_to 'Profile', profile_path, class: 'button-no-style'
           - else
-            li.link = link_to "Sign in", new_user_session_path, class: "button-no-style"
+            li.link = link_to 'Sign in', new_user_session_path, class: 'button-no-style'

@@ -27,6 +27,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @categories = Category.all
+  end
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
@@ -34,10 +38,6 @@ class PostsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-    @categories = Category.all
   end
 
   def update
