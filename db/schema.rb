@@ -13,9 +13,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 20_231_124_100_107) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
-
   create_table 'active_storage_attachments', force: :cascade do |t|
     t.string 'name', null: false
     t.string 'record_type', null: false
@@ -56,16 +53,16 @@ ActiveRecord::Schema[7.1].define(version: 20_231_124_100_107) do
     t.string 'ancestry', default: '#'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'user_id'
-    t.bigint 'post_id'
+    t.integer 'user_id'
+    t.integer 'post_id'
     t.index ['ancestry'], name: 'index_post_comments_on_ancestry'
     t.index ['post_id'], name: 'index_post_comments_on_post_id'
     t.index ['user_id'], name: 'index_post_comments_on_user_id'
   end
 
   create_table 'post_likes', force: :cascade do |t|
-    t.bigint 'post_id', null: false
-    t.bigint 'user_id', null: false
+    t.integer 'post_id', null: false
+    t.integer 'user_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['post_id'], name: 'index_post_likes_on_post_id'
@@ -76,8 +73,8 @@ ActiveRecord::Schema[7.1].define(version: 20_231_124_100_107) do
   create_table 'posts', force: :cascade do |t|
     t.string 'title'
     t.string 'body'
-    t.bigint 'creator_id', null: false
-    t.bigint 'category_id', null: false
+    t.integer 'creator_id', null: false
+    t.integer 'category_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.integer 'likes_count', default: 0
