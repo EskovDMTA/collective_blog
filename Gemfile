@@ -15,6 +15,7 @@ gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim'
 gem 'sprockets-rails'
+gem 'rubocop-discourse'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
