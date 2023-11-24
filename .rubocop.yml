@@ -1,10 +1,12 @@
 require:
   - rubocop-slim
   - rubocop-rails
-
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.2.2
+  Include:
+    - '**/*.rb'
+    - '**/*.slim'
   Exclude:
     - 'db'
     - 'lib/tasks/auto_annotate_models.rake'

@@ -14,7 +14,6 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim'
-gem 'slim_lint'
 gem 'sprockets-rails'
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -56,6 +55,9 @@ gem 'jsbundling-rails'
 gem 'minitest-power_assert'
 gem 'rubocop-rails', require: false
 gem 'rubocop-slim', require: false
+gem 'slim_lint', require: false
+
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 
 group :development, :test do
