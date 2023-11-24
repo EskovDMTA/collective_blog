@@ -9,13 +9,14 @@ gem 'mini_magick'
 gem 'rails', '~> 7.1.1'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'image_processing', '~> 1.2'
+gem 'rubocop-discourse'
+gem 'rubocop-rake', require: false
 gem 'sassc-rails'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim'
 gem 'sprockets-rails'
-gem 'rubocop-discourse'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
@@ -44,7 +45,6 @@ gem 'jbuilder'
 
 gem "bcrypt", "~> 3.1.7"
 
-gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'ancestry'
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
@@ -54,6 +54,7 @@ gem 'minitest-power_assert'
 gem 'rubocop-rails', require: false
 gem 'rubocop-slim', require: false
 gem 'slim_lint', require: false
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
