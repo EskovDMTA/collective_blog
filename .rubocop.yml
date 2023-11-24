@@ -10,7 +10,7 @@ AllCops:
     - '**/*.rb'
     - '**/*.slim'
   Exclude:
-    - 'db'
+    - 'db/schema.rb'
     - 'bin/**/*'
     - 'script/**/*'
 
