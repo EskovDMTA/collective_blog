@@ -1,6 +1,8 @@
 require:
   - rubocop-slim
   - rubocop-rails
+  - rubocop-rake
+
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.2.2
@@ -9,8 +11,8 @@ AllCops:
     - '**/*.slim'
   Exclude:
     - 'db'
-    - 'lib/tasks/auto_annotate_models.rake'
     - 'bin/**/*'
+    - 'script/**/*'
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes

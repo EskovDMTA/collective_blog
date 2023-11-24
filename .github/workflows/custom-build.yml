@@ -33,7 +33,10 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          bundler-cache: false # runs 'bundle install' and caches installed gems automatically
+
+      - name: Prepare project
+        run: make install
 
       - name: Run lint (rubocop)
         run: make lint
