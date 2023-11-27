@@ -8,7 +8,6 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
     @user_one = users(:one)
     @post = posts(:one)
     @comment_one = post_comments(:with_comments)
-    @comment_with_comments = post_comments(:deep_nested)
 
     sign_in(@user_one)
   end

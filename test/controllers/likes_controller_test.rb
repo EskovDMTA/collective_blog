@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative '../test_helper'
+require 'test_helper'
 
 class LikesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @post = posts(:one)
+    @post = posts(:with_comments)
     @user = users(:one)
     sign_in(@user)
   end
