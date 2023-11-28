@@ -64,6 +64,6 @@ class PostsController < ApplicationController
   end
 
   def post_author
-    redirect_to root_path, alert: 'You are not authorized to perform this action.' unless current_user == @post.creator
+    redirect_to root_path, alert: I18n.t('posts.not_authorized') unless current_user == @post.creator
   end
 end

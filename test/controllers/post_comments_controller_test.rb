@@ -38,7 +38,7 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to post_path(@post)
-    assert_equal 'Comment added successfully!😊', flash[:notice]
+    assert_equal 'Comment added successfully!', flash[:notice]
 
     assert_equal 1, PostComment.find_by(content: 'This is a comment').children.count
     assert_equal 1, PostComment.find_by(content: 'Nested comment').children.count
