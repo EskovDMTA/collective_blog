@@ -10,7 +10,6 @@ gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'image_processing', '~> 1.2'
 gem 'rubocop-discourse'
-gem 'rubocop-rake', require: false
 gem 'sassc-rails'
 gem 'sentry-rails'
 gem 'sentry-ruby'
@@ -48,9 +47,9 @@ gem 'devise', '~> 4.9'
 gem 'faker'
 gem 'jsbundling-rails'
 gem 'minitest-power_assert'
-gem 'rubocop-rails', require: false
-gem 'rubocop-slim', require: false
-gem 'slim_lint', require: false
+
+
+gem 'slim_lint'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
@@ -59,6 +58,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-minitest', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rake', require: false
+  gem 'rubocop-slim', require: false
   gem 'web-console'
 end
 

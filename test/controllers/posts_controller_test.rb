@@ -11,11 +11,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
   test 'should get index' do
     get posts_url
+
     assert_response :success
   end
 
   test 'should get new' do
     get new_post_path
+
     assert_response :success
   end
 
@@ -47,6 +49,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
         creator: users(:one)
       }
     }
+
     assert_redirected_to post_url(@post)
   end
 

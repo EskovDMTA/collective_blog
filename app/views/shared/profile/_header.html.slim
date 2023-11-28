@@ -1,9 +1,21 @@
+# frozen_string_literal: true
+
 header.profile_header
-  .d-flex
-    ul.d-flex.nav_links.align-items-center
-      li.link = link_to 'Home page', root_path
-      li.link = link_to 'Back to posts', posts_path
-      li.link = link_to 'Add post', new_post_path
-  ul.d-flex.social_links.align-items-center
-  ul.d-flex.nav_links.align-items-center
-    li.link = button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-no-style'
+      .d
+flex
+ul.d
+flex.nav_links.align
+items
+center
+li.link = link_to 'Home page', root_path
+li.link = link_to 'Back to posts', posts_path
+li.link = link_to 'Add post', new_post_path
+ul.d
+flex.social_links.align
+items
+center
+ul.d
+flex.nav_links.align
+items
+center
+li.link = button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-no-style'
