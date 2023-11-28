@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to post_path(params[:post_id]), notice: 'Comment added successfully!😊'
+      redirect_to post_path(params[:post_id]), notice: I18n.t('comments.created_successfully')
     else
-      redirect_to post_path(params[:post_id]), alert: 'Failed to add comment!😞'
+      redirect_to post_path(params[:post_id]), alert: I18n.t('comments.created_failed')
     end
   end
 
@@ -18,9 +18,9 @@ class CommentsController < ApplicationController
     @comment = PostComment.find(params[:id])
     @post = @comment.post
     if @comment.destroy
-      redirect_to post_path(@post), notice: 'Comment delete!😊'
+      redirect_to post_path(@post), notice: I18n.t('comments.delete_successfully')
     else
-      redirect_to post_path(@post), alert: 'Failed to delete comment 😞'
+      redirect_to post_path(@post), alert: I18n.t('comments.delete_failed')
     end
   end
 

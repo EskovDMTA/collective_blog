@@ -1,6 +1,0 @@
-.like_content
-  = link_to '', post_likes_path(post), class: 'add_like bi-plus-lg'
-  .like_count
-    = post.likes_count
-  = button_to '', post_like_path(post, post.post_likes.find_by(user: current_user)), method.delete,
-  class: 'remove_like bi-dash-lg'
