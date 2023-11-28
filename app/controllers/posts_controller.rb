@@ -10,11 +10,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.post_comments.roots.order(created_at: :desc)
+    @comments = @post.comments.roots.order(created_at: :desc)
 
     return unless user_signed_in?
 
-    @comment = @post.post_comments.new(post_id: @post.id, user_id: current_user.id)
+    @comment = @post.comments.new(post_id: @post.id, user_id: current_user.id)
   end
 
   def new

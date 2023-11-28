@@ -18,7 +18,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy like' do
-    like = @post.post_likes.create(user: @user)
+    like = @post.likes.create(user: @user)
 
     assert_difference('PostLike.count', -1) do
       delete post_like_path(@post, like)
