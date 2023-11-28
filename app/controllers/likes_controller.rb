@@ -5,7 +5,7 @@ class LikesController < ApplicationController
   before_action :set_post, only: %i[create destroy]
 
   def create
-    @like = @post.post_likes.new(user: current_user)
+    @like = @post.likes.new(user: current_user)
     @like.save
     redirect_to @post, notice: '👍'
   end
