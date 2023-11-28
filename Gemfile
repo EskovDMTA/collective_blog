@@ -47,8 +47,6 @@ gem 'devise', '~> 4.9'
 gem 'faker'
 gem 'jsbundling-rails'
 gem 'minitest-power_assert'
-
-
 gem 'slim_lint'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
