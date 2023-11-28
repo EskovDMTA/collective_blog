@@ -38,4 +38,3 @@ section.show_post.mt-7
         p Post has no comments yet
       - if user_signed_in?
         = render partial: 'shared/form/comment', locals: { comment: @comment, button_name: 'Create' }
-

@@ -1,5 +1,5 @@
 section.create_post_section.mt-7
-  div.left_side
+  .left_side
     h2.create_post_title = title
     = simple_form_for(model, html: { class: 'post_form' }) do |f|
       .field
@@ -13,9 +13,5 @@ section.create_post_section.mt-7
         = f.file_field :image, placeholder: 'Add image', label: false, class: 'form-control'
       .actions
         = f.submit button_text, class: 'login_btn'
-  div.right_side
+  .right_side
     = image_tag src = 'registration/registration_image.JPG', class: 'login_image'
-
-
-
-
