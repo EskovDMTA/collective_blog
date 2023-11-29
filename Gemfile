@@ -56,10 +56,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rubocop', require: false
+  gem 'rubocop', '1.57.2'
   gem 'rubocop-minitest', require: false
   gem 'rubocop-rails', require: false
-  gem 'rubocop-rake', require: false
+  # gem 'rubocop-rake', require: false
   gem 'rubocop-slim', require: false
   gem 'web-console'
 end

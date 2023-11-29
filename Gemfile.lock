@@ -226,14 +226,10 @@ GEM
       rubocop-rspec (>= 2.0.0)
     rubocop-factory_bot (2.24.0)
       rubocop (~> 1.33)
-    rubocop-minitest (0.33.0)
-      rubocop (>= 1.39, < 2.0)
     rubocop-rails (2.22.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-    rubocop-rake (0.6.0)
-      rubocop (~> 1.0)
     rubocop-rspec (2.25.0)
       rubocop (~> 1.40)
       rubocop-capybara (~> 2.17)
@@ -332,11 +328,9 @@ DEPENDENCIES
   pg
   puma (>= 5.0)
   rails (~> 7.0.4)
-  rubocop
+  rubocop (= 1.57.2)
   rubocop-discourse
-  rubocop-minitest
   rubocop-rails
-  rubocop-rake
   rubocop-slim
   sassc-rails
   selenium-webdriver

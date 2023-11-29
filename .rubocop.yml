@@ -1,8 +1,7 @@
 require:
-  - rubocop-minitest
   - rubocop-rails
-  - rubocop-rake
   - rubocop-slim
+  - rubocop-minitest
 
 AllCops:
   NewCops: enable
@@ -49,9 +48,6 @@ Layout/LineLength:
     - 'config/initializers/simple_form.rb'
 
 Metrics/AbcSize:
-  Enabled: false
-
-Rails/I18nLocaleTexts:
   Enabled: false
 
 Rails/UniqueValidationWithoutIndex:
