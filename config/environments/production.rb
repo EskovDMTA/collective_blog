@@ -8,7 +8,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.hosts << ENV.fetch('DEVELOPMENT_HOSTS', nil)
+  config.hosts << 'rails-project-64-production-2cc0.up.railway.app'
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
