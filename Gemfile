@@ -56,7 +56,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rubocop-capybara'
   gem 'rubocop-minitest'
   gem 'rubocop-rails'
   gem 'rubocop-rake'
