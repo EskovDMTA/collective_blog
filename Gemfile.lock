@@ -332,7 +332,7 @@ DEPENDENCIES
   pg
   puma (>= 5.0)
   rails (~> 7.0.4)
-  rubocop-capybara
+  rubocop
   rubocop-discourse
   rubocop-minitest
   rubocop-rails
