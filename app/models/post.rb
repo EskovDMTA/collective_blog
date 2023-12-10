@@ -13,6 +13,8 @@ class Post < ApplicationRecord
   validate :check_image_size
 
   def check_image_size
+    return unless image.attached?
+
     return unless image.blob.byte_size > 5.megabytes
 
     errors.add(:image, 'image should be less than 5MB')

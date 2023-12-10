@@ -28,7 +28,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
           title: @post.title,
           body: @post.body,
           category_id: @categories.id,
-          creator: users(:one)
+          creator: users(:one),
+          image: fixture_file_upload('app/assets/images/posts/post_image.jpg', 'image/jpg')
         }
       }
     end
@@ -46,7 +47,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
         title: @post.title,
         body: @post.body,
         category_id: @categories.id,
-        creator: users(:one)
+        creator: users(:one),
+        image: fixture_file_upload('app/assets/images/posts/post_image.jpg', 'image/jpg')
       }
     }
 
