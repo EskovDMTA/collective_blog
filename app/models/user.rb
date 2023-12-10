@@ -12,27 +12,21 @@ class User < ApplicationRecord
   validate :avatar_size_validation, if: -> { avatar.attached? }
   validates :profession, length: { maximum: 20 }, allow_blank: true
 
-  def avatar_size_validation
-    return unless avatar.attached? && avatar.blob.byte_size > 10.megabytes
+  has_one_attached :avatar do |attachable|
+    attachable.variant :post_avatar, resize_to_limit: [100, 100]
+  end
 
-    errors.add(:avatar, 'should be less than 10MB')
+  def avatar_size_validation
+    return unless avatar.attached? && avatar.blob.byte_size > 5.megabytes
+
+    errors.add(:avatar, 'should be less than 5MB')
   end
 
   def post_avatar
     if avatar.attached?
-      avatar.variant(resize: '100x100').processed
+      avatar.variant(:post_avatar)
     else
       'posts/default_avatar.png'
-    end
-  rescue StandardError
-    'posts/default_avatar.png'
-  end
-
-  def comment_avatar
-    if avatar.attached?
-      avatar.variant(resize: '30x30').processed
-    else
-      'posts/default_avatar.png'.variant(resize: '30x30').processed
     end
   end
 end

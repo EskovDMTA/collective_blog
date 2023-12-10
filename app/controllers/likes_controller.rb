@@ -7,7 +7,7 @@ class LikesController < ApplicationController
   def create
     @like = @post.likes.new(user: current_user)
     @like.save
-    redirect_to @post, notice: I18n.t('likes.like')
+    redirect_to @post
   end
 
   def destroy
@@ -15,7 +15,7 @@ class LikesController < ApplicationController
     redirect_to root_path and return if @like.user != current_user
 
     @like.destroy
-    redirect_to @post, notice: I18n.t('likes.unlike')
+    redirect_to @post
   end
 
   private

@@ -8,7 +8,7 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
   body.application_wrapper
-    - if notice.present?
-      = render partial: 'shared/toast/toast', locals: { notice: }
+    / - if notice.present?
+    /   = render partial: 'shared/toast/toast', locals: { notice: }
     = render partial: 'shared/UI/header'
     = yield

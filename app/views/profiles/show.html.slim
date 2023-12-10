@@ -4,15 +4,15 @@
   p
     strong
       | Email:
-    = @user.email
+    = " #{@user.email}"
   h3
     | Your Posts
   p
     | Total Posts:
-    = @posts_count
+    = " #{@posts_count}"
   p
     | Total Likes Received:
-    = @likes_count
+    = " #{@likes_count}"
   h3.mb-5
     | Your Latest Posts
   .preview_posts_container

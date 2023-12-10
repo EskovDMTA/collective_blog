@@ -37,6 +37,22 @@
   transition: background 0.5s linear;
 }
 
+.form_comment_reply_btn {
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(6, 40, 161, 0.73);
+  color: #ffffff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  transition: background 0.5s linear;
+}
+
+.form_comment_btn:hover, .form_comment_reply_btn:hover {
+  background-color: rgba(84, 116, 234, 0.73);
+  color: #ffffff;
+}
+
 
 
 
@@ -116,4 +132,8 @@ button{
   height: 90%;
   background-color: #0046f8;
   position: absolute;
+}
+
+.send_text{
+  cursor: pointer;
 }

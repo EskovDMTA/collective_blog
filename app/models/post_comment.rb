@@ -5,5 +5,5 @@ class PostComment < ApplicationRecord
   belongs_to :user
   has_ancestry
 
-  validates :content, presence: true, length: { minimum: 5 }
+  validates :content, presence: true, length: { minimum: 1 }
 end
