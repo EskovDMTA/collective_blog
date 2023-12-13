@@ -1,5 +1,12 @@
 .blog_slider{
   margin-bottom: 100px;
 }
-
-//background: url("./blog-slider/background.JPG") no-repeat center;
+.post_description_background{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.16);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+}
+.image-bg-big_post{
+  opacity: 0.9;
+}

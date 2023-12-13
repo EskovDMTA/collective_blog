@@ -6,9 +6,10 @@
   .carousel-inner
     - @popular_posts.each_with_index do |post, index|
       .carousel-item class="#{index.zero? ? 'active' : ''}" data-bs-interval="5000"
-        = image_tag post.post_image, class: 'd-block w-100'
+        = image_tag post.post_image, class: 'd-block w-100 image-bg-big_post'
         .carousel-caption.d-none.d-md-block
-          h5
-            = link_to post.title, post_path(post)
-          p
-            = truncate(post.body, length: 120)
+          div.post_description_background
+            h3
+              = link_to post.title, post_path(post)
+            p
+              = truncate(post.body, length: 120)

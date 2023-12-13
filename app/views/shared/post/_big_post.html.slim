@@ -1,10 +1,11 @@
 .card.text-center.border-0
   = image_tag @big_post.post_image, class: 'card-img rounded-0'
   .card-img-overlay.d-flex.flex-column.justify-content-center
-    h1.card-title.text-white
-      = link_to @big_post.title, post_path(@big_post)
-    p.card-text.text-white
-      = truncate(@big_post.body, length: 200)
-    p.card-text.text-white
-      small
-        = @big_post.formatted_created_at
+    .post_description_background
+      h1.card-title.text-white
+        = link_to @big_post.title, post_path(@big_post)
+      p.card-text.text-white
+        = truncate(@big_post.body, length: 200)
+      p.card-text.text-white
+        small
+          = @big_post.formatted_created_at
