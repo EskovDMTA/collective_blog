@@ -10,10 +10,9 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: { minimum: 10, maximum: 100 }
   validates :body, presence: true, length: { minimum: 10, maximum: 2000 }
-  validates :image, presence: true
 
   def post_image
-    image || 'posts/post_image.jpg'
+    image.url || ActionController::Base.helpers.asset_path('posts/post_image.jpg')
   end
 
   def formatted_created_at

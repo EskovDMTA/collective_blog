@@ -13,6 +13,6 @@ class User < ApplicationRecord
   validates :profession, length: { maximum: 20 }, allow_blank: true
 
   def post_avatar
-    avatar ? avatar.post_avatar : 'posts/default_avatar.png'
+    avatar.post_avatar.url || ActionController::Base.helpers.asset_path('posts/default_avatar.png')
   end
 end
