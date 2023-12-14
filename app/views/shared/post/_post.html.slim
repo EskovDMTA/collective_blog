@@ -2,7 +2,7 @@
   .preview_post_container
     = link_to post_path(post)
       .preview_post_image
-        = image_tag src = post.post_image, class: 'post_image'
+        = image_tag src = post.post_image.url, class: 'post_image'
         .preview_post_category_container
           span.preview_post_category
             = post.category.name
@@ -16,7 +16,7 @@
             = truncate(post.body, length: 80)
         .user_block
           .preview_user_avatar
-            = image_tag post.creator.post_avatar, class: 'user_avatar'
+            = image_tag post.creator.post_avatar.url, class: 'user_avatar'
           .about_user
             span.user_email
               = post.creator.email

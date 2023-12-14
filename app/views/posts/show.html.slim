@@ -11,7 +11,7 @@ section.show_post.mt-7
       .post_body
         = @post.body
       .post_image
-        = image_tag @post.post_image, class: 'show_post_image'
+        = image_tag @post.post_image.url, class: 'show_post_image'
       .post_title_main
         = @post.title
       .post_category
@@ -19,7 +19,7 @@ section.show_post.mt-7
       .about_user_container
         .user_block
           .preview_user_avatar
-            = image_tag @post.creator.post_avatar, class: 'user_avatar'
+            = image_tag @post.creator.post_avatar.url, class: 'user_avatar'
           .about_user
             span.user_email
               = @post.creator.email

@@ -8,7 +8,8 @@ ruby '3.2.2'
 
 gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'image_processing', '~> 1.2'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'rubocop-discourse'
 gem 'sassc-rails'
 gem 'sentry-rails'

@@ -4,7 +4,7 @@
       .user_info
         .user_avatar_and_date
           .user_info_avatar
-            = image_tag comment.user.post_avatar, class: 'comment_user_avatar'
+            = image_tag comment.user.post_avatar.url, class: 'comment_user_avatar'
           .user_email
             - if current_user&.email == comment.user.email
               div you
