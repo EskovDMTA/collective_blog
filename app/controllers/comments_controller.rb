@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(params[:post_id]), notice: I18n.t('comments.created_successfully')
     else
-      redirect_to post_path(params[:post_id]), alert: I18n.t('comments.created_failed')
+      render 'posts/show'
     end
   end
 
