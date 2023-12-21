@@ -1,0 +1,144 @@
+ru:
+  time:
+    formats:
+      long: "%d %B %Y"
+
+  reading_time:
+    minute:
+      one: '%{count} минута'
+      other: '%{count} минут'
+
+  home_page:
+    show:
+      popular_post: 'Популярные посты'
+
+  devise:
+    registrations:
+      new:
+        title_page: 'Создать аккаунт'
+        text_about_blog: 'Публикуйте свои фотографии и общайтесь с другими авторами на PhotoBlog'
+        avatar_label: 'Загрузить аватар'
+        profession_placeholder: 'Инженер'
+        password_placeholder: 'Пароль'
+        enter_again_placeholder: 'Повторите пароль'
+        have_account: 'Уже есть аккаунт?'
+        login: 'Войти'
+    sessions:
+      new:
+        title_page: 'Вход'
+        text_about_blog: 'Добро пожаловать обратно. Пожалуйста, введите ваши данные'
+        password_placeholder: 'Пароль'
+        forgot_password: 'Забыли пароль?'
+        remember_me: 'Запомнить меня'
+        dont_have_account: 'У вас нет аккаунта?'
+        login: 'Войти'
+        sign_up: 'Зарегистрироваться'
+    shared:
+      links:
+        login: 'Войти'
+        sign_up: 'Зарегистрироваться'
+        forgot_password: 'Забыли пароль?'
+
+  posts:
+    created_successfully: 'Пост успешно создан!'
+    updated_successfully: 'Пост успешно обновлен!'
+    deleted_successfully: 'Пост успешно удален!'
+    not_authorized: 'У вас нет разрешения на выполнение этого действия.'
+
+    post:
+      title: 'Заголовок'
+      body: 'Текст'
+      upload_image: 'Загрузить изображение'
+
+
+    edit:
+      update_post: 'Обновить пост'
+      button_text: 'Обновить'
+
+    index:
+      page_title: 'Посты'
+
+    new:
+      new_post: 'Создать пост'
+      button_text: 'Создать'
+
+    show:
+      comments: 'Комментарии'
+      no_comments: 'Пост еще не имеет комментариев'
+      comment_button_text: 'Создать комментарий'
+
+  comments:
+    created_successfully: 'Комментарий успешно добавлен!'
+    created_failed: 'Не удалось добавить комментарий!'
+    delete_successfully: 'Комментарий удален!'
+    delete_failed: 'Не удалось удалить комментарий'
+
+  profile:
+    show:
+      your_profile: 'Ваш профиль'
+      email: 'Email:'
+      your_posts: 'Ваши посты'
+      total_posts: 'Всего постов:'
+      total_likes: 'Всего лайков:'
+      your_latest_posts: 'Ваши последние посты:'
+
+  shared:
+    comments:
+      comment:
+        button_send: 'Отправить'
+        reply: 'Ответить'
+        you: 'вы'
+    form:
+      comment:
+        placeholder_content: 'Напишите комментарий'
+    post:
+      post:
+        edit_post: 'Редактировать пост'
+        delete_post: 'Удалить пост'
+        delete_confirm: 'Вы уверены?'
+    profile:
+      header:
+        home_page: 'Главная страница'
+        to_posts: 'Вернуться к постам'
+        sign_out: 'Выйти'
+    toast:
+      toast:
+        success: 'Успех'
+    UI:
+      header:
+        logo: 'Коллективный блог'
+        home: 'Главная'
+        about: 'О нас'
+        posts: 'Посты'
+        new_post: 'Новый пост'
+        sign_in: 'Войти'
+        profile: 'Профиль'
+        sign_out: 'Выйти'
+        account: 'Аккаунт'
+
+  layouts:
+    application:
+      title: 'Коллективный блог'
+    profile:
+      title: 'Коллективный блог | Профиль'
+
+  activerecord:
+    attributes:
+      post:
+        title: 'Заголовок'
+        body: 'Текст'
+        image: 'Изображение'
+        category: 'Категория'
+      user:
+        email: 'Email'
+        profession: 'Профессия'
+        avatar: 'Аватар'
+        password: 'Пароль'
+
+    models:
+      post: 'Пост'
+
+  helpers:
+    submit:
+      user:
+        create: 'Регистрация'

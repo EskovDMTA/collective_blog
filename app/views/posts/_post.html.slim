@@ -1,14 +1,15 @@
 section.create_post_section.mt-7
   .left_side
-    h2.create_post_title = title
+    h2.create_post_title
+      = title
     = render partial: 'devise/shared/error_messages', locals: { resource: model }
     = simple_form_for(model, html: { class: 'post_form' }) do |f|
-      = f.input :title, placeholder: 'Title', required: true, input_html: { class: 'email_input' }, error: false
-      = f.input :body, as: :text, required: true, input_html: { class: 'post_text_input' }, error: false
-      = f.input :category_id, collection: @categories, label_method: :name, value_method: :id,
-        input_html: { class: 'form-select mb-3' }
-      = f.label :image, 'Upload image', class: 'mb-2'
-      = f.file_field :image, class: 'form-control mb-4', required: true, error: false
+      = f.input :title, placeholder: t('.title'), required: true, input_html: { class: 'email_input' }, error: false
+      = f.input :body, as: :text, placeholder: t('.body'), required: true, input_html: { class: 'post_text_input' },
+              error: false
+      = f.association :category, required: true, collection: Category.all, input_html: { class: 'form-select mb-3' }
+      = f.label :image, t('.upload_image'), class: 'mb-2'
+      = f.file_field :image, class: 'form-control mb-4', error: false
       = f.submit button_text, class: 'login_btn', data: { turbo: 'false' }
   .right_side
     = image_tag src = 'registration/registration_image.jpg', class: 'login_image'

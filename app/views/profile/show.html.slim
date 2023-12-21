@@ -1,19 +1,21 @@
 .profile_content
   h2
-    | Your Profile
+    = t('.your_profile')
   p
     strong
-      | Email:
+      = t('.email')
     = " #{@user.email}"
   h3
-    | Your Posts
+    = t('.your_posts')
   p
-    | Total Posts:
+    strong
+      = t('.total_posts')
     = " #{@posts_count}"
   p
-    | Total Likes Received:
+    strong
+      = t('.total_likes')
     = " #{@likes_count}"
   h3.mb-5
-    | Your Latest Posts
+    = t('.your_latest_posts')
   .preview_posts_container
       = render partial: 'shared/post/post', locals: { posts: @posts }

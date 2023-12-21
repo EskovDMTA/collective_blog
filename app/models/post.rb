@@ -16,13 +16,15 @@ class Post < ApplicationRecord
   end
 
   def formatted_created_at
-    created_at.strftime('%d %B %Y')
+    I18n.l(created_at, format: :long)
   end
 
   def reading_time
     words_per_minute = 200
 
     minutes_reading = (body.split.length / words_per_minute) + 1
-    minutes_reading.to_s
+    I18n.t('reading_time.minute', count: minutes_reading,
+                                  default: "#{minutes_reading} #{I18n.t("reading_time.minute",
+                                                                        count: minutes_reading)}")
   end
 end

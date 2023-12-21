@@ -1,6 +1,0 @@
-en:
-  comments:
-    created_successfully: 'Comment added successfully!'
-    created_failed: 'Failed to add comment!'
-    delete_successfully: 'Comment delete!'
-    delete_failed: 'Failed to delete comment'

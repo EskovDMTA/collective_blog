@@ -7,7 +7,8 @@
             = image_tag comment.user.post_avatar, class: 'comment_user_avatar'
           .user_email
             - if current_user&.email == comment.user.email
-              div you
+              div
+                = t('.you')
             - else
               span = comment.user.email
           .comment_date_ago
@@ -18,14 +19,15 @@
             data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'bi-trash3-fill me-3'
           - if user_signed_in?
             .div data-bs-toggle="collapse" data-bs-target="#replyForm_#{comment.id}"
-              button.form_comment_reply_btn Reply
+              button.form_comment_reply_btn
+                = t('.reply')
       .comment_content
         = comment.content
   - if user_signed_in?
     .accordion-collapse.collapse[id="replyForm_#{comment.id}"]
       .comment_form
         = render partial: 'shared/form/comment',
-        locals: { comment: create_nested_comment(comment, comment.post), button_name: 'Send' }
+        locals: { comment: create_nested_comment(comment, comment.post), button_name: t('.button_send') }
   - if comment.children.present?
     .nested_comment_container
       .nested_comment_delimiter

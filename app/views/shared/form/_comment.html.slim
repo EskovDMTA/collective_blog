@@ -6,6 +6,7 @@
       = f.hidden_field :parent_id, value: comment.parent_id
 
     .field.mb-4.form_input_container
-      = f.input :content, label: false, placeholder: 'Write comment', input_html: { class: 'form_comment_input' }, error: false
+      = f.input :content, label: false, placeholder: t('.placeholder_content'), input_html: { class: 'form_comment_input' },
+              error: false
     .actions
       = f.button :submit, class: 'form_comment_btn', value: button_name, data: { turbo: 'false' }

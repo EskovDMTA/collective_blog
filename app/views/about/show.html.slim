@@ -1,47 +1,44 @@
 .container.text-dark.mt-7
   .row
     .col-md-8.offset-md-2
-      h2.text-center My Photo Blog
+      h2.text-center
+        = t('.project_name')
       p.text-center
-        | Welcome to "Photo Blog" - my educational project created to demonstrate web development skills.
+        = t('.welcome')
       p.text-center
-        | Here you can register, publish your photos, comment on posts, like, and interact with other participants.
+        = t('.what_you_can')
 
   .row.my-5
     .col-md-6
-      h3 About the Project
+      h3
+        = t('.about')
       p
-        | "Photo Blog" is developed using Ruby on Rails and includes basic social network features such as registration, post publishing, commenting, and liking.
+        = t('.about_stack')
       p
-        | The project is created for educational purposes and is intended for learning web development basics.
-        | This project is implemented on the educational platform
+        = t('.about_project')
         = link_to ' Hexlet', 'https://ru.hexlet.io/', target: '_blank', class: 'text-blue', rel: 'noopener'
-        | .
       p
-        | It's also worth noting that tests are written in the project using
+        = t('.about_test')
         = link_to ' Minitest', 'https://guides.rubyonrails.org/testing.html', target: '_blank', class: 'text-blue',
         rel: 'noopener'
-        | .
       p
-        | The
+        = t('.about_comments')
         = link_to ' Ancestry ', 'https://github.com/stefankroes/ancestry', target: '_blank', class: 'text-blue', rel: 'noopener'
-        | gem is used for managing comments.
+        = t('.about_comments_gem')
 
     .col-md-6
-      h3 Contact Me
+      h3
+        = t('.contact_me')
       ul.list-unstyled
         li
           i.bi.bi-github
-          |
           = link_to ' GitHub', 'https://github.com/EskovDMTA', target: '_blank', class: 'text-dark', rel: 'noopener'
         li
           i.bi.bi-telegram
-          |
           = link_to ' Telegram', 'https://t.me/EDMTA', target: '_blank', class: 'text-dark', rel: 'noopener'
-      p.text-muted.text-center
+      span.text-muted.text-center
         small
-          | If you have any questions or suggestions, feel free to contact me via
-          = link_to ' GitHub', 'https://github.com/EskovDMTA', target: '_blank', class: 'text-blue', rel: 'noopener'
-          |  or
-          = link_to ' Telegram', 'https://t.me/EDMTA', target: '_blank', class: 'text-blue', rel: 'noopener'
-          | .
+          = t('.contact_message')
+          = link_to t('.github'), 'https://github.com/EskovDMTA', target: '_blank', class: 'text-blue', rel: 'noopener'
+          = t('.contact_message_or')
+          = link_to t('.telegram'), 'https://t.me/EDMTA', target: '_blank', class: 'text-blue', rel: 'noopener'

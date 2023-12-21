@@ -1,33 +1,148 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      long: "%d %B %Y"
+
+  reading_time:
+    minute:
+      one: '%{count} minute'
+      other: '%{count} minutes'
+
+  home_page:
+    show:
+      popular_post: 'Popular posts'
+
+  devise:
+    registrations:
+      new:
+        title_page: 'Create an account'
+        text_about_blog: 'Post your photos and interact with other authors on PhotoBlog'
+        avatar_label: 'Upload avatar'
+        profession_placeholder: 'Engineer'
+        password_placeholder: 'Password'
+        enter_again_placeholder: 'Enter password again'
+        have_account: 'Already have an account ?'
+        login: 'Login'
+    sessions:
+      new:
+        title_page: 'Login'
+        text_about_blog: 'Welcome back. Please enter your details'
+        password_placeholder: 'Password'
+        forgot_password: 'Forgot your password?'
+        remember_me: 'Remember me'
+        dont_have_account: "Don't have an account?"
+        login: 'Login'
+        sign_up: "Sign up"
+    shared:
+      links:
+        login: "Log in"
+        sign_up: "Sign up"
+        forgot_password: "Forgot your password?"
+
+  posts:
+    created_successfully: 'Post created successfully!'
+    updated_successfully: 'Post updated successfully!'
+    deleted_successfully: 'Post deleted successfully!'
+    not_authorized: 'You are not authorized to perform this action.'
+
+    post:
+      title: 'Title'
+      body: 'Body'
+      upload_image: 'Upload image'
+
+
+    edit:
+      update_post: 'Update a post'
+      button_text: 'Update'
+
+    index:
+      page_title: 'Posts'
+
+    new:
+      new_post: 'Create a post'
+      button_text: 'Create'
+
+    show:
+      comments: 'Comments'
+      no_comments: 'Post has no comments yet'
+      comment_button_text: 'Create'
+
+  comments:
+    created_successfully: 'Comment added successfully!'
+    created_failed: 'Failed to add comment!'
+    delete_successfully: 'Comment delete!'
+    delete_failed: 'Failed to delete comment'
+
+  profile:
+    show:
+      your_profile: 'Your profile'
+      email: 'Email:'
+      your_posts: 'Your posts'
+      total_posts: 'Total posts:'
+      total_likes: 'Total likes received:'
+      your_latest_posts: 'Your latest posts:'
+
+  shared:
+    comments:
+      comment:
+        button_send: 'Send'
+        reply: 'Reply'
+        you: 'you'
+    form:
+      comment:
+        placeholder_content: 'Write comment'
+    post:
+      post:
+        edit_post: 'Edit post'
+        delete_post: 'Delete post'
+        delete_confirm: 'Are you sure?'
+    profile:
+      header:
+        home_page: 'Home page'
+        to_posts: 'Back to posts'
+        sign_out: 'Sign out'
+    toast:
+      toast:
+        success: 'Success'
+    UI:
+      header:
+        logo: 'Collective Blog'
+        home: 'Home'
+        about: 'About'
+        posts: 'Posts'
+        new_post: 'New post'
+        sign_in: 'Sign in'
+        profile: 'Profile'
+        sign_out: 'Sign out'
+        account: 'Account'
+
+
+  layouts:
+    application:
+      title: 'Collective Blog'
+    profile:
+      title: 'Collective Blog | Profile'
+
+  activerecord:
+    attributes:
+      post:
+        title: 'Title'
+        body: 'Body'
+        image: 'Image'
+        category: 'Category'
+      user:
+        email: 'Email'
+        profession: 'Profession'
+        avatar: 'Avatar'
+        password: 'Password'
+
+    models:
+      post: 'Post'
+
+  helpers:
+    submit:
+      user:
+        create: 'Registration'
+
+
+

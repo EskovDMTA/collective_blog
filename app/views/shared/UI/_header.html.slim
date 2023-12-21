@@ -3,14 +3,15 @@ header
     .header_wrapper
       .logo.link
         = link_to root_path do
-          h1.logo_icon Photo Blog
+          h1.logo_icon
+            = t('.logo')
       .d-flex
         ul.d-flex.nav_links.align-items-center
-          li.link = link_to 'Home', root_path
-          li.link = link_to 'About', about_path
-          li.link = link_to 'Posts', posts_path
+          li.link = link_to t('.home'), root_path
+          li.link = link_to t('.about'), about_path
+          li.link = link_to t('.posts'), posts_path
           - if user_signed_in?
-            li.link = link_to 'New post', new_post_path
+            li.link = link_to t('.new_post'), new_post_path
         ul.d-flex.social_links.align-items-center
           li.link = link_to 'https://www.facebook.com/Hexlet/?locale=ru_RU' do
             = image_tag src = 'header/facebook.png'
@@ -20,11 +21,11 @@ header
             = image_tag src = 'header/youtube.png'
         ul.d-flex.nav_links.align-items-center
           - unless user_signed_in?
-            li.link = link_to 'Sign in', new_user_session_path, class: 'button-no-style'
+            li.link = link_to t('.sign_in'), new_user_session_path, class: 'button-no-style'
           - else
             .dropdown.link
               button.button-no-style.dropdown-toggle[type="button" data-bs-toggle="dropdown" aria-expanded="false"]
-                |  Account
+                = t('.account')
               ul.dropdown-menu
-                li.dropdown-item = link_to 'Profile', profile_path, class: 'button-no-style'
-                li.dropdown-item = button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-no-style'
+                li.dropdown-item = link_to t('.profile'), profile_path, class: 'button-no-style'
+                li.dropdown-item = button_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'button-no-style'

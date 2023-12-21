@@ -1,4 +1,5 @@
 section.posts_section.mt-7
-  p.preview_posts_title Posts
+  p.preview_posts_title
+    = t('.page_title')
   .preview_posts_container
     = render partial: 'shared/post/post', locals: { posts: @posts }

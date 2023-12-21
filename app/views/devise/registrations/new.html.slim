@@ -1,25 +1,28 @@
 section.sign_up
   div.left_side
-    h2.registration_title Create an account
-    p.welcome_description Post your photos and interact with other authors on PhotoBlog.
+    h2.registration_title
+      = t('.title_page')
+    p.welcome_description
+      = t('.text_about_blog')
     = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render 'devise/shared/error_messages', resource:
       = f.input :email, required: true, placeholder: 'example@gmail.com',
               input_html: { class: 'email_input form-control' }, label_html: { class: 'mb-2' }, error: false
-      = f.label :avatar, 'Upload avatar', class: 'mb-2'
+      = f.label :avatar, t('.avatar_label'), class: 'mb-2'
       = f.file_field :avatar, class: 'form-control mb-4'
-      = f.input :profession, placeholder: 'Engineer',
+      = f.input :profession, placeholder: t('.profession_placeholder'),
         input_html: { class: 'password_input form-control' }, label_html: { class: 'mb-2' }
-      = f.input :password, required: true, placeholder: 'Password', input_html: { class: 'password_input form-control' },
+      = f.input :password, required: true, placeholder: t('.password_placeholder'),
+              input_html: { class: 'password_input form-control' },
               label_html: { class: 'mb-2' }, error: false
-      = f.input :password_confirmation, required: true, placeholder: 'Enter password again',
+      = f.input :password_confirmation, required: true, placeholder: t('.enter_again_placeholder'),
               label_html: { class: 'mb-2' }, input_html: { class: 'password_input form-control' }, error: false
       .actions
-        = f.button :submit, 'Create account', class: 'login_btn'
+        = f.button :submit, class: 'login_btn'
     - if controller_name != 'sessions'
       div.sign_up_description
-        | Already have an account ?
-        = link_to 'Log in', new_session_path(resource_name), class: 'sign_up_button'
+        = t('.have_account')
+        = link_to t('.login'), new_session_path(resource_name), class: 'sign_up_button'
   div.right_side
     = image_tag 'registration/registration_image.jpg', class: 'login_image'
 

@@ -1,21 +1,23 @@
 section.sign_in
   div.left_side
-    h2.login_title Login
-    p.welcome_description Welcome back. Please enter your details.
+    h2.login_title
+      = t('.title_page')
+    p.welcome_description
+      = t('.text_about_blog')
     = render partial: 'devise/shared/error_flash_messages'
     = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      = f.input :email, autofocus: true, required: true, placeholder: 'Email', input_html: { class: 'email_input' }
-      = f.input :password, required: true, placeholder: 'Password', input_html: { class: 'password_input' }
+      = f.input :email, autofocus: true, required: true, placeholder: 'example@gmail.com', input_html: { class: 'email_input' }
+      = f.input :password, required: true, placeholder: t('.password_placeholder'), input_html: { class: 'password_input' }
       .forgot_password
         - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-          = link_to 'Forgot your password?', new_password_path(resource_name)
+          = link_to t('.forgot_password'), new_password_path(resource_name)
       - if devise_mapping.rememberable?
         .field
-          = f.input :remember_me, as: :boolean, label: 'Remember me', wrapper_class: 'form-check'
-        = f.button :submit, 'Log in', class: 'login_btn'
+          = f.input :remember_me, as: :boolean, label: t('.remember_me'), wrapper_class: 'form-check'
+        = f.button :submit, t('.login'), class: 'login_btn'
     - if devise_mapping.registerable? && controller_name != 'registrations'
       div.sign_up_description
-        | Don't have an account?
-        = link_to 'Sign up', new_registration_path(resource_name), class: 'sign_up_button'
+        = t('.dont_have_account')
+        = link_to t('.sign_up'), new_registration_path(resource_name), class: 'sign_up_button'
   div.right_side
     = image_tag 'registration/login_image.jpg', class: 'login_image'

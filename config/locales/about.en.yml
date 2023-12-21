@@ -1,0 +1,17 @@
+en:
+  about:
+    show:
+      project_name: 'Collective Blog'
+      welcome: 'Welcome to "Collective Blog" - my educational project on Hexlet'
+      what_you_can: 'Here you can register, publish your photos, comment on posts, like, and interact with other participants'
+      about: 'About the Project'
+      about_stack: 'Collective Blog" is developed using Ruby on Rails and includes basic social network features such as registration, post publishing, commenting, and liking'
+      about_project: 'The project is created for educational purposes and is intended for learning web development basics. This project is implemented on the educational platform'
+      about_test: "It's also worth noting that tests are written in the project using"
+      about_comments: 'The'
+      about_comments_gems: 'gem is used for managing comments'
+      contact_me: 'Contact Me'
+      contact_message: 'If you have any questions or suggestions, contact me via'
+      contact_message_or: ' or'
+      github: ' GitHub'
+      telegram: ' Telegram'
