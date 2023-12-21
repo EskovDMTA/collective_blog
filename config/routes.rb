@@ -2,11 +2,11 @@
 
 Rails.application.routes.draw do
   root 'home_page#index'
-  get '/about', to: 'about#index'
   devise_for :users, controllers: { registrations: 'registrations',
                                     sessions: 'sessions',
                                     passwords: 'passwords' }
 
+  resource :about, only: %i[show], controller: 'about'
   resource :profile, only: %i[show]
 
   resources :posts do

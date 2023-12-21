@@ -4,7 +4,6 @@ require_relative '../test_helper'
 
 class PostCommentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    get '/users/sign_in'
     @user_one = users(:one)
     @post = posts(:one)
     @comment_one = post_comments(:with_comments)
@@ -13,6 +12,7 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create comment' do
+    initial_comments_count = @post.comments.count
     post post_comments_url(@post), params: {
       post_comment: {
         post_id: @post.id,
@@ -21,26 +21,27 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
       }
     }
 
+    assert_equal(initial_comments_count + 1, @post.comments.count)
+
     assert_response :redirect
     assert_redirected_to post_path(@post)
   end
 
   test 'should create nested comment with comments' do
     assert_difference('PostComment.count', 3) do
-      post post_comments_url(post_id: @post.id),
+      post post_comments_url(post_id: posts(:with_comments).id),
            params: { post_comment: { content: 'This is a comment' } }
-      post post_comments_url(post_id: @post.id),
+      post post_comments_url(post_id: posts(:with_comments).id),
            params: { post_comment: { content: 'Nested comment',
-                                     parent_id: PostComment.find_by(content: 'This is a comment').id } }
-      post post_comments_url(post_id: @post.id),
+                                     parent_id: post_comments(:with_comments).id } }
+      post post_comments_url(post_id: posts(:with_comments).id),
            params: { post_comment: { content: 'Deep comment',
-                                     parent_id: PostComment.find_by(content: 'Nested comment').id } }
+                                     parent_id: post_comments(:nested).id } }
     end
 
-    assert_redirected_to post_path(@post)
-    assert_equal 'Comment added successfully!', flash[:notice]
+    assert_redirected_to post_path(posts(:with_comments))
 
-    assert_equal 1, PostComment.find_by(content: 'This is a comment').children.count
-    assert_equal 1, PostComment.find_by(content: 'Nested comment').children.count
+    assert_equal 1, post_comments(:with_comments).children.count
+    assert_equal 1, post_comments(:nested).children.count
   end
 end

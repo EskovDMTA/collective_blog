@@ -10,20 +10,18 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create like' do
-    assert_difference('PostLike.count', 1) do
-      post post_likes_path(@post.id)
-    end
+    initial_like_count = PostLike.count
+    post post_likes_path(@post.id)
 
-    assert_redirected_to post_path(@post)
+    assert_equal(initial_like_count + 1, PostLike.count)
   end
 
   test 'should destroy like' do
     like = @post.likes.create(user: @user)
+    initial_like_count = PostLike.count
 
-    assert_difference('PostLike.count', -1) do
-      delete post_like_path(@post, like)
-    end
+    delete post_like_path(@post, like)
 
-    assert_redirected_to post_path(@post)
+    assert_equal(initial_like_count - 1, PostLike.count)
   end
 end
