@@ -24,7 +24,7 @@ class Post < ApplicationRecord
 
     minutes_reading = (body.split.length / words_per_minute) + 1
     I18n.t('reading_time.minute', count: minutes_reading,
-                                  default: "#{minutes_reading} #{I18n.t("reading_time.minute",
+                                  default: "#{minutes_reading} #{I18n.t('reading_time.minute',
                                                                         count: minutes_reading)}")
   end
 end

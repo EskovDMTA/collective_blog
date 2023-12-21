@@ -10,6 +10,7 @@ gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails-i18n'
 gem 'rubocop-discourse'
 gem 'sassc-rails'
 gem 'sentry-rails'
@@ -17,7 +18,6 @@ gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim'
 gem 'sprockets-rails'
-gem 'rails-i18n'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
