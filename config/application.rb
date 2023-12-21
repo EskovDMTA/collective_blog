@@ -17,7 +17,7 @@ module CollectiveBlog
     config.assets.compile = true
 
     config.i18n.available_locales = %i[en ru]
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ru
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #

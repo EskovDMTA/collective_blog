@@ -11,7 +11,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create like' do
     initial_like_count = PostLike.count
-    post post_likes_path(@post.id, locale: :en)
+    post post_likes_path(@post.id)
 
     assert_equal(initial_like_count + 1, PostLike.count)
   end

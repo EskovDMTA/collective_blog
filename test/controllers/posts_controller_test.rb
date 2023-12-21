@@ -36,7 +36,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show post' do
-    get post_url(@post, locale: :en)
+    get post_url(@post)
 
     assert_response :success
   end
@@ -44,7 +44,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should update post' do
     updated_title = 'Updated title'
     updated_body = 'Updated body'
-    patch post_url(@post, locale: :en), params: {
+    patch post_url(@post), params: {
       post: {
         title: updated_title,
         body: updated_body,
@@ -62,7 +62,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy post' do
     initial_post_count = Post.count
-    delete post_url(@post, locale: :en)
+    delete post_url(@post)
 
     assert_equal(initial_post_count - 1, Post.count)
     assert_redirected_to root_path

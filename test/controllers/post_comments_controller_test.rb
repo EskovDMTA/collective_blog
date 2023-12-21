@@ -13,7 +13,7 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create comment' do
     initial_comments_count = @post.comments.count
-    post post_comments_url(@post, locale: :en), params: {
+    post post_comments_url(@post), params: {
       post_comment: {
         post_id: @post.id,
         user_id: @post.creator,
