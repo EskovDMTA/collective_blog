@@ -13,32 +13,3 @@
 @import 'profile/profile';
 @import 'devise/devise';
 @import 'toast/toast';
-
-html, body {
-  height: 100%;
-  margin: 0;
-  background: #F8F9FA;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
-  margin: 0;
-}
-
-main {
-  flex: 1;
-  max-width: 1440px;
-}
-
-footer {
-  flex-shrink: 0;
-}
-
-.application_wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
-}
