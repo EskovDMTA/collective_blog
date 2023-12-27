@@ -10,18 +10,18 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create like' do
-    initial_like_count = PostLike.count
+    # initial_like_count = PostLike.count
     post post_likes_path(@post.id)
+    post_comment = PostLike.find_by(post_id: @post.id, user_id: @user.id)
 
-    assert_equal(initial_like_count + 1, PostLike.count)
+    assert(post_comment)
   end
 
   test 'should destroy like' do
     like = @post.likes.create(user: @user)
-    initial_like_count = PostLike.count
 
-    delete post_like_path(@post, like, locale: :en)
+    delete post_like_path(@post, like)
 
-    assert_equal(initial_like_count - 1, PostLike.count)
+    assert_nil(PostLike.find_by(post_id: @post.id, user_id: @user.id))
   end
 end

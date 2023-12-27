@@ -21,7 +21,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create post' do
-    initial_post_count = Post.count
     post posts_url, params: {
       post: {
         title: @post.title,
@@ -32,7 +31,12 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       }
     }
 
-    assert_equal(initial_post_count + 1, Post.count)
+    post = Post.find_by(title: @post.title,
+                        body: @post.body,
+                        category_id: @categories.id,
+                        creator: users(:one))
+
+    assert(post)
   end
 
   test 'should show post' do
@@ -61,10 +65,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy post' do
-    initial_post_count = Post.count
     delete post_url(@post)
 
-    assert_equal(initial_post_count - 1, Post.count)
+    assert_nil(Post.find_by(id: @post.id))
     assert_redirected_to root_path
   end
 end

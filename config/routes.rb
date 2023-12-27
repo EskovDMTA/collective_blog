@@ -6,8 +6,8 @@ Rails.application.routes.draw do
                                     sessions: 'sessions',
                                     passwords: 'passwords' }
 
-  resource :about, only: %i[show], controller: 'about'
-  resource :profile, only: %i[show], controller: 'profile'
+  resource :about, only: %i[show]
+  resource :profile, only: %i[show]
 
   resources :posts do
     resources :likes, only: %i[create destroy]
