@@ -16,7 +16,7 @@ ru:
     registrations:
       new:
         title_page: 'Создать аккаунт'
-        text_about_blog: 'Публикуйте свои фотографии и общайтесь с другими авторами на PhotoBlog'
+        text_about_blog: 'Публикуйте свои фотографии и общайтесь с другими авторами в Коллективном Блоге'
         avatar_label: 'Загрузить аватар'
         profession_placeholder: 'Инженер'
         password_placeholder: 'Пароль'
@@ -134,6 +134,7 @@ ru:
         profession: 'Профессия'
         avatar: 'Аватар'
         password: 'Пароль'
+        password_confirmation: 'Подтвердите пароль'
 
     models:
       post: 'Пост'
