@@ -8,7 +8,7 @@ header
       .d-flex
         ul.d-flex.nav_links.align-items-center
           li.link = link_to t('.home'), root_path
-          li.link = link_to t('.about'), about_path
+          li.link = link_to t('.abouts'), about_path
           li.link = link_to t('.posts'), posts_path
           - if user_signed_in?
             li.link = link_to t('.new_post'), new_post_path
@@ -27,5 +27,5 @@ header
               button.button-no-style.dropdown-toggle[type="button" data-bs-toggle="dropdown" aria-expanded="false"]
                 = t('.account')
               ul.dropdown-menu
-                li.dropdown-item = link_to t('.profile'), profile_path, class: 'button-no-style'
+                li.dropdown-item = link_to t('.profiles'), profile_path, class: 'button-no-style'
                 li.dropdown-item = button_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'button-no-style'

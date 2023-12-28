@@ -73,9 +73,9 @@ en:
     delete_successfully: 'Comment delete!'
     delete_failed: 'Failed to delete comment'
 
-  profile:
+  profiles:
     show:
-      your_profile: 'Your profile'
+      your_profile: 'Your profiles'
       email: 'Email:'
       your_posts: 'Your posts'
       total_posts: 'Total posts:'
@@ -96,7 +96,7 @@ en:
         edit_post: 'Edit post'
         delete_post: 'Delete post'
         delete_confirm: 'Are you sure?'
-    profile:
+    profiles:
       header:
         home_page: 'Home page'
         to_posts: 'Back to posts'
@@ -108,11 +108,11 @@ en:
       header:
         logo: 'Collective Blog'
         home: 'Home'
-        about: 'About'
+        abouts: 'About'
         posts: 'Posts'
         new_post: 'New post'
         sign_in: 'Sign in'
-        profile: 'Profile'
+        profiles: 'Profile'
         sign_out: 'Sign out'
         account: 'Account'
 

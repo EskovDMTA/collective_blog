@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# app/controllers/profile_controller.rb
+# app/controllers/profiles_controller.rb
 
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
   layout 'profile_layouts'
 
   before_action :authenticate_user!

@@ -73,7 +73,7 @@ ru:
     delete_successfully: 'Комментарий удален!'
     delete_failed: 'Не удалось удалить комментарий'
 
-  profile:
+  profiles:
     show:
       your_profile: 'Ваш профиль'
       email: 'Email:'
@@ -96,7 +96,7 @@ ru:
         edit_post: 'Редактировать пост'
         delete_post: 'Удалить пост'
         delete_confirm: 'Вы уверены?'
-    profile:
+    profiles:
       header:
         home_page: 'Главная страница'
         to_posts: 'Вернуться к постам'
@@ -108,18 +108,18 @@ ru:
       header:
         logo: 'Коллективный блог'
         home: 'Главная'
-        about: 'О проекте'
+        abouts: 'О проекте'
         posts: 'Посты'
         new_post: 'Новый пост'
         sign_in: 'Войти'
-        profile: 'Профиль'
+        profiles: 'Профиль'
         sign_out: 'Выйти'
         account: 'Аккаунт'
 
   layouts:
     application:
       title: 'Коллективный блог'
-    profile:
+    profiles:
       title: 'Коллективный блог | Профиль'
 
   activerecord:

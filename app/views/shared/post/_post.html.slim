@@ -23,7 +23,7 @@
             span.user_profession
               = post.creator.profession
         - if user_signed_in? && current_user == post.creator
-          - if controller_name == 'profile'
+          - if controller_name == 'profiles'
             .post_actions
               = link_to t('.edit_post'), edit_post_path(post), class: 'edit_post_link'
               = button_to t('.delete_post'), post_path(post), method: :delete, data: { confirm: t('.delete_confirm') },
