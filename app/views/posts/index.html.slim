@@ -1,5 +1,4 @@
-section.posts_section.mt-7
-  p.preview_posts_title
+section.mb-5
+  p.fs-2.mb-5.fw-medium
     = t('.page_title')
-  .preview_posts_container
-    = render partial: 'shared/post/post', locals: { posts: @posts }
+  = render partial: 'shared/post/post', locals: { posts: @posts }

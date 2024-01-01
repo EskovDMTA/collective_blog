@@ -1,11 +1,9 @@
-section.blog_slider
+section.mb-5
   = render partial: 'shared/blog-slider/blog-slider'
-section.popular_posts
-  section.preview_posts_section
-    p.preview_posts_title
+section.mb-5
+    p.fs-2.mb-5.fw-medium
       = t('.popular_post')
-    .preview_posts_container
-      = render partial: 'shared/post/post', locals: { posts: @popular_posts }
-section.big_post
+    = render partial: 'shared/post/post', locals: { posts: @popular_posts }
+section.mb-5
   - if @big_post.present?
     = render partial: 'shared/post/big_post'

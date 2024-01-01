@@ -1,31 +1,25 @@
-header
-  .wrapper
-    .header_wrapper
-      .logo.link
-        = link_to root_path do
-          h1.logo_icon
-            = t('.logo')
-      .d-flex
-        ul.d-flex.nav_links.align-items-center
-          li.link = link_to t('.home'), root_path
-          li.link = link_to t('.abouts'), about_path
-          li.link = link_to t('.posts'), posts_path
-          - if user_signed_in?
-            li.link = link_to t('.new_post'), new_post_path
-        ul.d-flex.social_links.align-items-center
-          li.link = link_to 'https://www.facebook.com/Hexlet/?locale=ru_RU' do
-            = image_tag src = 'header/facebook.png'
-          li.link = link_to 'https://twitter.com/HexletHQ' do
-            = image_tag src = 'header/twitter.png'
-          li.link = link_to 'https://www.youtube.com/@HexletOrg' do
-            = image_tag src = 'header/youtube.png'
-        ul.d-flex.nav_links.align-items-center
-          - unless user_signed_in?
-            li.link = link_to t('.sign_in'), new_user_session_path, class: 'button-no-style'
-          - else
-            .dropdown.link
-              button.button-no-style.dropdown-toggle[type="button" data-bs-toggle="dropdown" aria-expanded="false"]
-                = t('.account')
-              ul.dropdown-menu
-                li.dropdown-item = link_to t('.profiles'), profile_path, class: 'button-no-style'
-                li.dropdown-item = button_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'button-no-style'
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.bg-opacity-75.mb-5
+  .container-fluid
+    = link_to root_path, class: 'text-decoration-none' do
+      h1.navbar-brand.pb-0
+        = t('.logo')
+    button.navbar-toggler[type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item = link_to t('.home'), root_path, class: 'nav-link'
+        li.nav-item = link_to t('.abouts'), about_path, class: 'nav-link'
+        li.nav-item = link_to t('.posts'), posts_path, class: 'nav-link'
+        - if user_signed_in?
+          li.nav-item = link_to t('.new_post'), new_post_path, class: 'nav-link'
+
+      ul.navbar-nav.align-items-center
+        - unless user_signed_in?
+          li.nav-item = link_to t('.sign_in'), new_user_session_path, class: 'nav-link'
+        - else
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"]
+              = t('.account')
+            ul.dropdown-menu[aria-labelledby="navbarDropdown"]
+              li.dropdown-item = link_to t('.profiles'), profile_path, class: 'btn'
+              li.dropdown-item = button_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'btn'

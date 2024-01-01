@@ -145,5 +145,9 @@ en:
       user:
         create: 'Registration'
 
+  errors:
+    messages:
+      max_size_error: 'cannot be larger than 5 MB'
+
 
 

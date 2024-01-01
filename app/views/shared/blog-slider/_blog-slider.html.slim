@@ -8,8 +8,8 @@
       .carousel-item class="#{index.zero? ? 'active' : ''}" data-bs-interval="5000"
         = image_tag post.post_image, class: 'd-block w-100 image-bg-big_post'
         .carousel-caption.d-none.d-md-block
-          .post_description_background
+          .bg-dark.bg-gradient.bg-opacity-50
             h3
-              = link_to post.title, post_path(post)
-            p
+              = link_to post.title, post_path(post), class: 'text-decoration-none text-white'
+            p.text-white
               = truncate(post.body, length: 120)

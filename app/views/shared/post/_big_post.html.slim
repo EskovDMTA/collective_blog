@@ -1,9 +1,9 @@
 .card.text-center.border-0
   = image_tag @big_post.post_image, class: 'card-img rounded-0'
   .card-img-overlay.d-flex.flex-column.justify-content-center
-    .post_description_background
+    .bg-dark.bg-gradient.bg-opacity-50
       h1.card-title.text-white
-        = link_to @big_post.title, post_path(@big_post)
+        = link_to @big_post.title, post_path(@big_post), class: 'text-decoration-none text-white'
       p.card-text.text-white
         = truncate(@big_post.body, length: 200)
       p.card-text.text-white

@@ -1,21 +1,21 @@
-.profile_content
-  h2
-    = t('.your_profile')
-  p
-    strong
-      = t('.email')
-    = " #{@user.email}"
-  h3
-    = t('.your_posts')
-  p
-    strong
-      = t('.total_posts')
-    = " #{@posts_count}"
-  p
-    strong
-      = t('.total_likes')
-    = " #{@likes_count}"
+section.mt-5
+  .about_profile
+    h2
+      = t('.your_profile')
+    p
+      strong
+        = t('.email')
+      = " #{@user.email}"
+    h3
+      = t('.your_posts')
+    p
+      strong
+        = t('.total_posts')
+      = " #{@posts_count}"
+    p
+      strong
+        = t('.total_likes')
+      = " #{@likes_count}"
   h3.mb-5
     = t('.your_latest_posts')
-  .preview_posts_container
-      = render partial: 'shared/post/post', locals: { posts: @posts }
+  = render partial: 'shared/post/post', locals: { posts: @posts }

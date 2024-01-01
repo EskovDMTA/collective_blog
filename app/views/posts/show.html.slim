@@ -1,36 +1,37 @@
-section.show_post.mt-7
-  .post_wrapper
+section.mt-7.mb-5
+  .d-flex.gap-5
     .left_post_side
-      .date_and_reading_container
-        .post_date
+      .d-flex.justify-content-between.align-items-center
+        .text-dark.fw-bold style="font-size: 12px;"
           = @post.formatted_created_at
-        .delimiter
-        .post_reading_time
+        .mx-3 style="height: 1px; background-color: #C4C4C4; width: 50px;"
+        .text-dark.fw-bold style="font-size: 12px;"
           = @post.reading_time
-    .right_post_side
-      .post_body
+    .d-flex.flex-column
+      .fw-medium.mb-3 style="font-size: 16px; color: #495057;"
         = @post.body
-      .post_image
-        = image_tag @post.post_image, class: 'show_post_image'
-      .post_title_main
+      .mb-5
+        = image_tag @post.post_image, class: 'img-fluid'
+      .fw-bold.fs-2.fw-bold.mb-2 style="color: #D4A373;"
         = @post.title
-      .post_category
-        span = @post.category.name
-      .about_user_container
-        .user_block
-          .preview_user_avatar
-            = image_tag @post.creator.post_avatar, class: 'user_avatar'
-          .about_user
-            span.user_email
+      .d-inline-flex.align-items-center.rounded.p-2.mb-3
+        span.text-muted.text-uppercase.font-weight-bold.border.rounded.px-2.mb-3 style="font-size: 10px; font-family: Roboto; border-color: #E5E5E5;"
+          = @post.category.name
+      .d-flex.justify-content-between.align-items-center.mb-5
+        .d-flex.align-items-center.mb-2
+          .div
+            = image_tag @post.creator.post_avatar, class: 'rounded-circle'
+          .d-flex.flex-column.justify-content-center.ms-2
+            span.fw-medium style="font-size: 14px;"
               = @post.creator.email
-            span.user_profession
+            span.fw-medium style="font-size: 12px;"
               = @post.creator.profession
-        .likes_container
+        .div
           = render partial: 'shared/likes/post_likes', locals: { post: @post }
-        .creator_social_media
-          .bi-telegram
-          .bi-instagram
-          .bi-github
+        .d-flex.justify-content-around
+          .bi-telegram.ms-3
+          .bi-instagram.ms-3
+          .bi-github.ms-3
       h5
         = t('.comments')
       - if @comments.present?

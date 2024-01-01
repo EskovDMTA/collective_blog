@@ -1,35 +1,36 @@
-.comment_block.accordion-item
-  .comment_container
-    .comment_block
-      .user_info
-        .user_avatar_and_date
-          .user_info_avatar
-            = image_tag comment.user.post_avatar, class: 'comment_user_avatar'
-          .user_email
+.w-100.ms-3.accordion-item
+  .d-flex.justify-content-between.p-3.rounded.mb-3
+    ms-3.w-100.ms-3
+      .d-flex.justify-content-between.align-items-center.mb-3
+        .d-flex.align-items-center
+          .div
+            = image_tag comment.user.post_avatar, class: 'rounded-circle me-3'
+          .fw-medium style="font-size: 14px;"
             - if current_user&.email == comment.user.email
-              div
+              .text-white.text-center.rounded.p-1 style="background: var(--Moderate-Blue, #5357B6);"
                 = t('.you')
             - else
               span = comment.user.email
-          .comment_date_ago
+          .ms-2
             = time_ago_in_words(comment.created_at)
         .d-inline-flex
           - if comment.user == current_user
             = button_to '', post_comment_path(comment.post, comment), method: :delete,
-            data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'bi-trash3-fill me-3'
+            data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+                    class: 'bi-trash3 me-3 btn btn-link text-decoration-none'
           - if user_signed_in?
             .div data-bs-toggle="collapse" data-bs-target="#replyForm_#{comment.id}"
-              button.form_comment_reply_btn
+              button.btn.btn-primary style="background: var(--Moderate-Blue, #5357B6);"
                 = t('.reply')
-      .comment_content
+      .div
         = comment.content
   - if user_signed_in?
     .accordion-collapse.collapse[id="replyForm_#{comment.id}"]
-      .comment_form
+      .div
         = render partial: 'shared/form/comment',
         locals: { comment: create_nested_comment(comment, comment.post), button_name: t('.button_send') }
   - if comment.children.present?
-    .nested_comment_container
-      .nested_comment_delimiter
+    .d-flex.position-relative
+      .div style="width: 2px; height: 90%; background-color: #0046f8; position: absolute;"
       - comment.children.each do |nested_comment|
         = render partial: 'shared/comments/comment', locals: { comment: nested_comment }

@@ -1,8 +1,9 @@
-header.profile_header
-  .d-flex
-    ul.d-flex.nav_links.align-items-center
-      li.link = link_to t('.home_page'), root_path
-      li.link = link_to t('.to_posts'), posts_path
-  ul.d-flex.social_links.align-items-center
-  ul.d-flex.nav_links.align-items-center
-    li.link = button_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'button-no-style'
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.bg-opacity-75.mb-5
+  .container-fluid
+    button.navbar-toggler[type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0.d-flex.justify-content-between.w-100
+        li.nav-item = link_to t('.home_page'), root_path, class: 'nav-link'
+        li.nav-item = link_to t('.to_posts'), about_path, class: 'nav-link'
+        li.nav-item = button_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'

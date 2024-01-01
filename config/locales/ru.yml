@@ -143,3 +143,7 @@ ru:
     submit:
       user:
         create: 'Регистрация'
+
+  errors:
+    messages:
+      max_size_error: "не может быть больше 5 MB"

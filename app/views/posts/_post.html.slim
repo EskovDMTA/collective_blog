@@ -1,15 +1,13 @@
-section.create_post_section.mt-7
-  .left_side
-    h2.create_post_title
-      = title
-    = render partial: 'devise/shared/error_messages', locals: { resource: model }
-    = simple_form_for(model, html: { class: 'post_form' }) do |f|
-      = f.input :title, placeholder: t('.title'), required: true, input_html: { class: 'email_input' }, error: false
-      = f.input :body, as: :text, placeholder: t('.body'), required: true, input_html: { class: 'post_text_input' },
-              error: false
-      = f.association :category, required: true, collection: Category.all, input_html: { class: 'form-select mb-3' }
-      = f.label :image, t('.upload_image'), class: 'mb-2'
-      = f.file_field :image, class: 'form-control mb-4', error: false
-      = f.submit button_text, class: 'login_btn', data: { turbo: 'false' }
-  .right_side
-    = image_tag src = 'registration/registration_image.jpg', class: 'login_image'
+section.create_post_section
+  h2
+    = title
+  = render partial: 'devise/shared/error_messages', locals: { resource: model }
+  = simple_form_for(model, html: { class: 'form-horizontal' }) do |f|
+    = f.input :title, label_html: { class: 'col-sm-2 control-label' }, placeholder: t('.title'), required: true,
+                                    input_html: { class: 'form-control mb-3' }, error: false
+    = f.input :body, as: :text, placeholder: t('.body'), label_html: { class: 'col-sm-2 control-label' }, required: true,
+                                          input_html: { class: 'form-control mb-3' }, error: false
+    = f.association :category, required: true, collection: Category.all, input_html: { class: 'form-select mb-3' }
+    = f.label :image, t('.upload_image'), class: 'col-sm-2 control-label mb-3'
+    = f.file_field :image, class: 'form-control mb-4', error: false
+    = f.submit button_text, class: 'btn btn-primary', data: { turbo: 'false' }
