@@ -3,7 +3,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.bg-opacity-75.mb-5
     = link_to root_path, class: 'text-decoration-none' do
       h1.navbar-brand.pb-0
         = t('.logo')
-    button.navbar-toggler[type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
+    button.navbar-toggler[type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.me-auto.mb-2.mb-lg-0
@@ -18,7 +19,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.bg-opacity-75.mb-5
           li.nav-item = link_to t('.sign_in'), new_user_session_path, class: 'nav-link'
         - else
           li.nav-item.dropdown
-            a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"]
+            a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"]
               = t('.account')
             ul.dropdown-menu[aria-labelledby="navbarDropdown"]
               li.dropdown-item = link_to t('.profiles'), profile_path, class: 'btn'
