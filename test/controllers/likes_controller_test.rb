@@ -10,7 +10,6 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create like' do
-    # initial_like_count = PostLike.count
     post post_likes_path(@post.id)
     post_comment = PostLike.find_by(post_id: @post.id, user_id: @user.id)
 
