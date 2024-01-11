@@ -16,7 +16,7 @@ en:
     registrations:
       new:
         title_page: 'Create an account'
-        text_about_blog: 'Post your photos and interact with other authors on PhotoBlog'
+        text_about_blog: 'Post your photos and interact with other authors on Collective Blog'
         avatar_label: 'Upload avatar'
         profession_placeholder: 'Engineer'
         password_placeholder: 'Password'
@@ -135,6 +135,7 @@ en:
         profession: 'Profession'
         avatar: 'Avatar'
         password: 'Password'
+        password_confirmation: 'Password confirmation'
 
     models:
       post: 'Post'
