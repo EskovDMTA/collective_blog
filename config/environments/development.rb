@@ -10,7 +10,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
   config.enable_reloading = true
-  config.hosts << 'web-production-382f.up.railway.app'
+  config.hosts << "collectiveblog-production.up.railway.app"
 
   # Do not eager load code on boot.
   config.eager_load = false
