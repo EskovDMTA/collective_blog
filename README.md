@@ -2,7 +2,7 @@
 [![hexlet-check](https://github.com/EskovDMTA/rails-project-64/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EskovDMTA/rails-project-64/actions/workflows/hexlet-check.yml)
 [![Ruby](https://github.com/EskovDMTA/rails-project-64/actions/workflows/custom-build.yml/badge.svg)](https://github.com/EskovDMTA/rails-project-64/actions/workflows/custom-build.yml)
 
-Deploy: https://marvelous-apparel-production.up.railway.app/
+Deploy: [https://marvelous-apparel-production.up.railway.app/](https://collectiveblog-production.up.railway.app/)
 
 ## Photo Blog
 
